@@ -18,14 +18,12 @@
     display: grid;
     grid-template-columns: repeat(2,1fr);
 }
-.navbar
-{
+.navbar{
     width: 100%;
     display: flex;
     background: rgba(211, 23, 23, 0.87);
     position: fixed top;
     color: white;
-
 }
 .fahome{
 font-size: 40px;
@@ -180,3 +178,116 @@ footer p
     padding-top: 50px;
 }
 /* END OF LOGIN PAGE */
+
+/* SIGN UP PAGE */
+.signupnavbar{
+    width: 100%;
+    display: flex;
+    background: rgba(180, 11, 11, 0.87);
+    position: fixed top;
+    color: white;
+}
+.signupcontainer{
+    width: 80%;
+    height: 600px;
+    margin: 30px auto 0;
+    text-align: center;
+    background: rgba(180, 11, 11, 0.87);
+    color: white;
+    box-shadow: 2px 2px 15px 1px rgba(0,0,0,.8);
+    border-radius: 5px;
+}
+
+.signupepicmail{
+    padding-top:5px;
+}
+
+.signupepicmail img 
+{
+    color: white;
+    border-radius: 100%;
+    
+}
+.signupepicmail img:hover{
+    border: 1px solid rgba(216, 19, 19, 0.938);
+    opacity: .5;;
+}
+.signup
+{
+    margin-top: 40px;
+}
+
+.signup button
+{
+    height: 30px;
+    border-radius: 5px;
+    
+}
+.signup button a{
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+.signup button:hover{
+    background: rgba(216, 19, 19, 0.938);
+    color: red;
+}
+
+.signup a{
+    color: white;
+}
+
+
+
+
+#signupform
+{
+    padding:0;
+    margin:0;
+    font-family: sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+}
+#signupform label, input
+{
+    margin-bottom: 25px;
+}
+
+#signupform input
+{
+    height: 30px;
+    border-radius: 5px;
+    width: 50%;
+    color-interpolation-filters: auto;
+}
+@media all and (max-width:780px){
+    #signupform input{
+        width: 30%;
+    }
+}
+#signupform #submit
+{
+width: 70px;
+height: 30px;
+}
+
+#footer
+{
+    margin: 20px auto 0px;
+    width: 100%;
+    height: 100px;;
+    background: rgba(201, 24, 24, 0.822);
+    opacity: .8;
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 18px;
+    color: white;
+   
+}
+
+#footer p
+{
+    padding-top: 50px;
+}
+
+/* END OF SIGN UP PART */
