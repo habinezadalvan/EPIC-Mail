@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    <title>Login</title>
+    <title>SignUp</title>
 </head>
 <body>
     <nav class="navbar">
@@ -32,24 +32,21 @@
                 <h1> SignUP to Epic  <span id="highlight">Mail</span></h1>
                
              </div>
-        <div class="logincontainer">
-            <div class="epicmail">
+        <div class="signupcontainer">
+            <div class="signupepicmail">
                 <img src="../css/images/mail3.png" alt="mailphoto" width="100px" height="100px">
                 <h1>Epic Mail</h1>
             </div>
-            <div class="login">
-                <form action="#" method="POST" id="loginform">
-                        <label for="username">Username</label>
-                        <input type="text" name="username" id="username" required="true" placeholder="username or email"> <br>
-                        <label for="Password">Password</label>
-                        <input type="password" name="Password" id="Password" required="true" placeholder="Enter password"> <br>
-                        <button type="submit" name="submit" id="submit"><a href="#">Login</a></button>
+            <div class="signup">
+                <form action="#" method="POST" id="signupform">
+                        <input type="text" name="firstname" id="firstname" required="true" placeholder="First Name"><br>
+                        <input type="text" name="lastname" id="lastname" required="true" placeholder="Last name"> <br>
+                        <input type="email" name="username" id="username" required="true" placeholder="Last name"> <br>
+                        <input type="password" name="Password" id="Password" required="true" placeholder="Password"> <br>
+                        <input type="password" name="Password" id="confirmPassword" required="true" placeholder="Confirm Password"> <br>
+                        <button type="submit" name="submit" id="submit"><a href="#">Sign UP</a></button>
                 </form>
-                <a href="#">forgot password?</a>
-            </div>
-            <div class="login">
-                <button type="button"><a href="signup.html">Create New Account</a></button>
-            </div>
+            
         </div>
     
     
