@@ -159,7 +159,7 @@ height: 30px;
     color: white;
 }
 
-footer 
+.loginfooter
 {
     margin: 20px auto 0px;
     width: 100%;
@@ -173,7 +173,7 @@ footer
    
 }
 
-footer p
+.loginfooter p
 {
     padding-top: 50px;
 }
