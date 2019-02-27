@@ -159,7 +159,7 @@ height: 30px;
     color: white;
 }
 
-footer 
+/* footer 
 {
     margin: 20px auto 0px;
     width: 100%;
@@ -176,7 +176,7 @@ footer
 footer p
 {
     padding-top: 50px;
-}
+} */
 /* END OF LOGIN PAGE */
 
 /* SIGN UP PAGE */
@@ -187,10 +187,26 @@ footer p
     position: fixed top;
     color: white;
 }
+.signupAllContainer{
+    display: grid;
+    grid-template-columns: repeat(2,1fr); 
+   
+}
+.signupwelcome{
+    float: left;
+    margin: 200px 0 100px 80px;
+    font-size: 30px;
+    color: rgba(240, 18, 18, 0.623);
+}
+
+#signuphighlight{
+    font-weight: bold;
+    font-size: 100px;
+}
 .signupcontainer{
     width: 80%;
     height: 600px;
-    margin: 30px auto 0;
+    margin: 30px auto 30px;
     text-align: center;
     background: rgba(180, 11, 11, 0.87);
     color: white;
@@ -237,9 +253,6 @@ footer p
     color: white;
 }
 
-
-
-
 #signupform
 {
     padding:0;
@@ -271,5 +284,8 @@ width: 70px;
 height: 30px;
 }
 
+#footer{
+    text-align: center;
+}
 
 /* END OF SIGN UP PART */
