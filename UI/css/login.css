@@ -1,10 +1,9 @@
-/* 
-START OF LOGIN PAGE */
+/* START OF LOGIN PAGE */
 /* *{
     background: url(./images/410119501Website-Design-Background.jpg) 0 -50px no-repeat;
     
 } */
-/* .welcome{
+.welcome{
     float: left;
     margin: 200px 0 100px 100px;
     font-size: 30px;
@@ -178,5 +177,5 @@ height: 30px;
 .loginfooter p
 {
     padding-top: 50px;
-} */
+}
 /* END OF LOGIN PAGE */
