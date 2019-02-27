@@ -1,35 +1,84 @@
 /* START OF LOGIN PAGE */
-/* *{
-    background: url(./images/410119501Website-Design-Background.jpg) 0 -50px no-repeat;
-    
-} */
+body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.navbar{
+    width: 100%;
+    display: flex;
+    background: #DB2B30;
+    position: fixed top;
+    color: white;
+    justify-content: space-between;
+}
+.navbar .icon{
+    font-size: 20px;
+    margin-left: 50px;
+}
+.navbar .link{
+    margin: 30px 150px 0 10px;
+    font-size: 18px;
+    font-weight: bold;
+   
+}
+
+.navbar .link a {
+    font-size: 20px;
+    padding: 10px;
+    width: 50px;
+    height: 25px;
+    margin-right: 20px;
+    text-decoration: none;
+    color: white;
+
+}
+.navbar .link a:hover{
+    background: #140A25;
+   
+}
+.navbar i.fa-bars{
+    margin: 30px auto 0;
+    display: none;
+}
+@media all and (max-width: 780px){
+    .navbar .link{
+        display: none;
+    }
+    .navbar i.fa-bars{
+        display: block;
+    }
+}
 .welcome{
     float: left;
     margin: 200px 0 100px 100px;
     font-size: 30px;
-    color: rgba(240, 18, 18, 0.623);
+    color: white;
 }
 #highlight{
     font-weight: bold;
     font-size: 100px;
+    color: #DB2B30;
 }
 .loginAllContainer{
+
+    background: url(../assets/images/loginbackground1.jpeg) no-repeat;
+    background-size: cover;
     display: grid;
     grid-template-columns: repeat(2,1fr);
 }
-.navbar{
-    width: 100%;
-    display: flex;
-    background: rgba(211, 23, 23, 0.87);
-    position: fixed top;
-    color: white;
+@media all and (max-width: 780px){
+    .loginAllContainer{
+        grid-template-columns:1fr;
+    }
 }
-.fahome{
+/* .fahome{
 font-size: 40px;
 margin-left: 20px;
 border-radius: 100%;
-}
-#homeicon{
+} */
+/* #homeicon{
     width: 30%;
 }
 #homeicon a{
@@ -76,16 +125,17 @@ border-radius: 100%;
 .menuplus .fa-bars, .fa-plus{
     margin-right: 10px;
 }
-
+ */
 
 .logincontainer{
+    
     width: 80%;
     height: 500px;
-    margin: 70px auto 0;
+    margin: 50px auto 10px;
     text-align: center;
-    background: rgba(211, 23, 23, 0.87);
+    background: rgba(8, 1, 1, 0.5);
     color: white;
-    box-shadow: 2px 2px 15px 1px rgba(0,0,0,.8);
+    box-shadow: 2px 2px 15px 1px rgba(0, 0, 0, 0.5);
     border-radius: 5px;
 }
 .epicmail
@@ -160,15 +210,16 @@ height: 30px;
 
 .loginfooter
 {
-    margin: 20px auto 0px;
+    /* margin: 20px auto 0px; */
     width: 100%;
-    height: 100px;;
-    background: rgba(201, 24, 24, 0.822);
+    height: 100px;
+    background: #8F1D2C;
     opacity: .8;
     text-align: center;
     font-family: sans-serif;
     font-size: 18px;
     color: white;
+    transform: translateY(-20px);
    
 }
 
@@ -272,10 +323,10 @@ height: 30px;
 
 #footer
 {
-    margin: 20px auto 0px;
+    
     width: 100%;
     height: 100px;;
-    background: rgba(201, 24, 24, 0.822);
+    background: #8F1D2C;
     opacity: .8;
     text-align: center;
     font-family: sans-serif;
