@@ -1,0 +1,14 @@
+body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.navbar{
+    width: 100%;
+    display: flex;
+    background: #DB2B30;
+    position: fixed top;
+    color: white;
+    justify-content: space-between;
+}
