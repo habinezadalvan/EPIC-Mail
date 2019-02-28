@@ -10,14 +10,19 @@ body{
     width: 100%;
     height: 80px;
     display: flex;
-    background: #DB2B30;
+    background: #2D142C;
     position: fixed top;
     color: white;
     justify-content: space-between;
+    position: relative;
+    z-index: 3;
 }
 .navbar i.fa-bars{
     margin: 30px auto 0;
     display: none;
+}
+.profile{
+    margin: 5px 40px 0 0;
 }
 
 .profile ul{
@@ -30,7 +35,7 @@ body{
     font-size: 18px;
     font-family: sans-serif;
     text-align: center;
-    background: #DB2B30;
+    background: #2D142C;
 }
 .profile ul li a{
     text-decoration: none;
@@ -38,21 +43,145 @@ body{
     display: block;
 }
 .profile ul li a:hover{
-    background: #871D2C; 
+    background: #510A32;
 }
 ul li ul li{
     display: none;
 }
 ul li:hover ul li{
     display: block;
+    
 }
 
 .profile img{
     border-radius: 100%
 }
-.profile img:hover{
+/* .profile img:hover{
     border: 1px solid rgba(216, 19, 19, 0.938);
     opacity: .5;
-}
+} */
 
 /* END OF NAVBAR */
+
+/* START OF SCROLL PART */
+
+.homecontainer{
+    margin:0;
+    padding:0;
+    width:100%;
+    height:650px;
+    background: yellow;
+    display: flex;
+    flex-direction: row;
+}
+/* .scrollform{
+    width: 100%;
+    height: 400px;
+    overflow: scroll;
+} */
+.scroll{
+    background: white;
+    flex-basis: 20%;
+    background: #871D2C; 
+    box-shadow:3px 3px 10px black;
+}
+
+.bodypart{
+    background: green;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 80%;  
+    position: relative;
+    z-index: 1;
+}
+.bodypart .bodypartsearch{
+    background: blue;
+    flex-basis: 10%;
+    margin-top: 20px;
+    
+}
+.bodypart .bodypartview{
+    background: pink;
+    flex-basis: 90%;
+}
+
+.scrollbuttons{
+   margin-top: 40px;
+}
+
+.scrollbuttons ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.scrollbuttons ul li{
+    margin: 0;
+    height: 50px;
+    font-size: 18px;
+    font-family: sans-serif;
+    background: #871D2C; 
+    
+}
+
+.scrollbuttons ul li a{
+margin-left: 10px;
+padding-top: 20px;
+height: 50px;
+text-decoration: none;
+color: white;
+display: block;
+
+}
+
+.scrollbuttons ul li a:hover{
+    background: #510A32;
+}
+
+.inboxmail{
+    float: right;
+    margin-right: 30px;
+}
+
+.scrollbutton{
+    width: 50%;
+    height: 70px;
+    font-size: 20px;
+    margin: 180px 65px 0;
+
+}
+
+
+/* END OF BODY PART */
+
+/* START OF SEARCH PART */
+
+.scrollbutton a {
+    text-decoration: none;  
+}
+
+#searchicon{
+    width:80%;
+    display: flex;
+    align-items: center;
+    
+   }
+   .searchicon{
+       padding-top: 10px;
+       width: 70%;
+       font-size: 25px;
+   }
+   .searchicon input {
+       padding: 0;
+       width: 80%;
+       height: 40px;
+   }
+   .searchicon button{
+      width: 40px;
+      height: 40px;
+      font-size: 15px;
+     
+   }
+   .searchicon input, button{
+       border-radius: 5px;
+   }
