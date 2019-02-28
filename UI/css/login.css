@@ -201,7 +201,7 @@ height: 30px;
 }
 .login button:hover{
     background: rgba(81, 10, 50,0.9);;
-    color: #510A32;;
+    color: #510A32;
 }
 
 .login a{
@@ -213,7 +213,7 @@ height: 30px;
     /* margin: 20px auto 0px; */
     width: 100%;
     height: 100px;
-    background: #8F1D2C;
+    background: #510A32;
     opacity: .8;
     text-align: center;
     font-family: sans-serif;
