@@ -51,18 +51,9 @@ body{
         display: block;
     }
 }
-
-/* end of navbar part */
-.signupnavbar{
-    width: 100%;
-    display: flex;
-    background: rgba(180, 11, 11, 0.87);
-    position: fixed top;
-    color: white;
-}
 /* end of navbar */
- ft-signup-page-#164207530
-.signupAllContainer{
+.signupAllContainers{
+
     display: grid;
     grid-template-columns: repeat(2,1fr); 
     background: url(../assets/images/signupepicmail.jpeg) no-repeat;
@@ -77,6 +68,11 @@ body{
     font-size: 30px;
     color: white;
 }
+
+
+
+
+
 @media all and (max-width: 780px){
     .signupwelcome{
         width: 30%;
@@ -91,7 +87,7 @@ body{
 .signupcontainer{
     width: 80%;
     height: 600px;
-    margin: 30px auto 30px;
+    margin: 25px auto 0px;
     text-align: center;
     background: rgba(0, 0, 0, 0.5);
     color: white;
