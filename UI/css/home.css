@@ -70,7 +70,6 @@ ul li:hover ul li{
     padding:0;
     width:100%;
     height:650px;
-    background: yellow;
     display: flex;
     flex-direction: row;
 }
@@ -82,27 +81,8 @@ ul li:hover ul li{
 .scroll{
     background: white;
     flex-basis: 20%;
-    background: #871D2C; 
+    background: url(../assets/images/scrollimage1.jpeg); 
     box-shadow:3px 3px 10px black;
-}
-
-.bodypart{
-    background: green;
-    display: flex;
-    flex-direction: column;
-    flex-basis: 80%;  
-    position: relative;
-    z-index: 1;
-}
-.bodypart .bodypartsearch{
-    background: blue;
-    flex-basis: 10%;
-    margin-top: 20px;
-    
-}
-.bodypart .bodypartview{
-    background: pink;
-    flex-basis: 90%;
 }
 
 .scrollbuttons{
@@ -120,7 +100,7 @@ ul li:hover ul li{
     height: 50px;
     font-size: 18px;
     font-family: sans-serif;
-    background: #871D2C; 
+    background: rgba(0, 0, 0,0.5); 
     
 }
 
@@ -143,37 +123,49 @@ display: block;
     margin-right: 30px;
 }
 
-.scrollbutton{
-    width: 50%;
-    height: 70px;
-    font-size: 20px;
-    margin: 180px 65px 0;
 
-}
 
 
 /* END OF BODY PART */
 
 /* START OF SEARCH PART */
 
-.scrollbutton a {
-    text-decoration: none;  
+.bodypart{
+    
+    display: flex;
+    flex-direction: column;
+    flex-basis: 80%;  
+    position: relative;
+    z-index: 1;
+}
+.bodypart .bodypartsearch{
+    background: url(../assets/images/searcharea.jpeg);
+    background-size: cover;
+    display: flex;
+    flex-basis: 10%;
+    justify-content: space-between;  
+}
+.bodypart .bodypartview{
+    background: pink;
+    flex-basis: 90%;
+    color: black;
 }
 
+.searchform{
+    margin-top: 16px;
+}
 #searchicon{
-    width:80%;
     display: flex;
     align-items: center;
     
    }
    .searchicon{
-       padding-top: 10px;
        width: 70%;
        font-size: 25px;
    }
    .searchicon input {
        padding: 0;
-       width: 80%;
+       width: 60%;
        height: 40px;
    }
    .searchicon button{
@@ -185,3 +177,41 @@ display: block;
    .searchicon input, button{
        border-radius: 5px;
    }
+
+   .compose{
+    width: 15%;
+    height: 70px;
+    font-size: 20px;
+    background: rgba(0, 0, 0,0.5); 
+}
+
+.compose a {
+    text-decoration: none;  
+}
+.compose:hover{
+    background: #510A32; 
+}
+
+/* END OF SEARCH PART */
+
+/* START OF BODY PART VIEW */
+
+.bodypartview .message{
+margin: 0;
+padding: 0;
+color: black;
+font-size: 20px;
+
+}
+.bodypartview .message a{
+    text-decoration: none;
+    
+}
+
+.bodypartview .message input {
+    font-size: 20px;
+}
+
+.time{
+
+}
