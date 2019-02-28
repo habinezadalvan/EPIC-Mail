@@ -8,7 +8,7 @@ body{
 .navbar{
     width: 100%;
     display: flex;
-    background: #DB2B30;
+    background: #2D142C;
     position: fixed top;
     color: white;
     justify-content: space-between;
@@ -59,7 +59,7 @@ body{
 #highlight{
     font-weight: bold;
     font-size: 100px;
-    color: #DB2B30;
+    color: #2D142C;
 }
 .loginAllContainer{
 
@@ -149,7 +149,7 @@ border-radius: 100%;
     
 }
 .epicmail img:hover{
-    border: 1px solid rgba(216, 19, 19, 0.938);
+    border: 1px solid rgba(15, 1, 15, 0.938);
     opacity: .5;;
 }
 #loginform
@@ -200,8 +200,8 @@ height: 30px;
     font-weight: bold;
 }
 .login button:hover{
-    background: rgba(216, 19, 19, 0.938);
-    color: red;
+    background: rgba(81, 10, 50,0.9);;
+    color: #510A32;;
 }
 
 .login a{
