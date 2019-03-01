@@ -201,7 +201,7 @@ display: block;
 
 /* START OF BODY PART VIEW */
 
-.bodypartview .message{
+/* .bodypartview .message{
 margin-top: 10px;
 padding: 0;
 color: black;
@@ -223,9 +223,47 @@ font-size: 20px;
 
 .mailviewbutton:hover{
     background: #510A32;
-}
+} */
 
 /* END OF BODY VIEW PART */
+
+/* START OF COMPOSING EMAIL PART */
+
+.comoposecontainer{
+    width: 80%;
+    height: 560px;
+    margin: 2px auto 0;
+    background: white;
+    box-shadow: 2px 2px 10px black;
+}
+
+.composeform{
+    display: grid;
+    grid-template-columns: 1fr;
+    height: 500px;
+
+}
+
+.composesendpart {
+    height: 50px;
+    font-size: 25px;
+    padding-left: 20px;
+}
+
+.composeform h2 {
+   margin-left: 30px;
+}
+
+.composeform input{
+    height: 50px;
+    margin-top: -80px;
+    border-radius: 5px;
+}
+.composeform textarea{
+    margin-top: -90px;  
+}
+
+/* END OF COMPOSING EMAIL PART */
 
 
 /* FOOTER */
