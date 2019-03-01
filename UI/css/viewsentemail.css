@@ -227,7 +227,7 @@ font-size: 20px;
 
 /* END OF BODY VIEW PART */
 
-/* START OF VIEW EMAIL PART */
+/* START OF VIEW SENT EMAIL PART (SAME STYLE AS FOR VIEW EMAIL) */
 
 .viewcontainer{
     width: 80%;
@@ -258,7 +258,7 @@ font-size: 20px;
     color: white;
 }
 
-/* END OF VIEW EMAIL PART */
+/* END OF VIEW SENT EMAIL PART */
 
 
 /* FOOTER */
