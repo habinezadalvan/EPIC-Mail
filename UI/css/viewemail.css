@@ -238,15 +238,25 @@ font-size: 20px;
 }
 
 .viewform{
-    
+    padding: 5px;
+}
+
+.viewmessagearea{
+    height: 400px;
+    overflow: scroll;
+    padding: 5px;
 }
 
 .viewmessagepart {
     height: 50px;
     font-size: 25px;
     padding-left: 20px;
+    float: right;
 }
-
+.viewmessagepart button{
+    background: #2D142C;
+    color: white;
+}
 
 /* END OF VIEW EMAIL PART */
 
