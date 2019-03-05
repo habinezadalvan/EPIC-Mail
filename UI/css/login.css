@@ -199,13 +199,13 @@ height: 30px;
     text-decoration: none;
     font-weight: bold;
 }
-/* .login button:hover{
+.login button:hover{
     background: rgba(81, 10, 50,0.9);;
-    color: #510A32;
-} */
+    color: white;
+}
 
 .login a{
-    color: black;
+    color: white;
 }
 
 .loginfooter
