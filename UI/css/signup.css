@@ -162,12 +162,19 @@ body{
         width: 30%;
     }
 }
-#signupform #submit
+#signupform #signupsubmit
 {
 width: 70px;
 height: 30px;
 }
+
+#errmsg{
+    color: red;
+    display: none;
+}
  
+
+/* end of signup part */
  #footer 
 {
     margin: 20px auto 0px;
