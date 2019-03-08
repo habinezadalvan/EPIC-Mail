@@ -1,10 +1,16 @@
 // eslint-disable-next-line no-unused-vars
 import moment from 'moment';
 import emails from '../models/message';
+import validation from '../helpers/messageValidation';
 
 const Message = {
 
   createMessages(req, res, next) {
+    const { error } = validation.validateMessage(req.body);
+    if (error) {
+      res.status(400).send(error.details[0].message);
+      return;
+    }
     const newId = Number(emails.length + 21);
     const newEmail = {
       id: newId,
