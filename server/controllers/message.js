@@ -66,6 +66,18 @@ const Message = {
     }
     next();
   },
+  getOneEmail(req, res, next) {
+    const singleEmail = emails.find(e => e.id === Number(req.params.id));
+    if (!singleEmail) {
+      res.status(404).send('Email not found');
+    } else {
+      res.status(200).json({
+        status: 200,
+        data: singleEmail,
+      });
+    }
+    next();
+  },
 };
 
 export default Message;
