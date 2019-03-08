@@ -78,6 +78,20 @@ const Message = {
     }
     next();
   },
+  deleteOneEmail(req, res, next) {
+    const deleteEmail = emails.find(e => e.id === Number(req.params.id));
+    if (!deleteEmail) {
+      res.status(404).send('That email can not be found to be deleted');
+    } else {
+      const index = emails.indexOf(deleteEmail);
+      emails.splice(index, 1);
+      res.status(200).json({
+        status: 200,
+        data: { message: ' Email deleted successfully' },
+      });
+    }
+    next();
+  },
 };
 
 export default Message;

@@ -11,5 +11,6 @@ router.get('/api/v1/messages', message.getAllMessages);
 router.get('/api/v1/messages/unread', message.UnreadMessages);
 router.get('/api/v1/messages/sent', message.sentMessages);
 router.get('/api/v1/messages/:id', message.getOneEmail);
+router.delete('/api/v1/messages/:id', message.deleteOneEmail);
 
 export default router;
