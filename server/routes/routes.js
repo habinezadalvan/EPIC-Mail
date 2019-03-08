@@ -8,6 +8,7 @@ const router = express.Router();
 router.post('/api/v1/messages', message.createMessages);
 
 router.get('/api/v1/messages', message.getAllMessages);
+router.get('/api/v1/messages/unread', message.UnreadMessages);
 
 
 export default router;

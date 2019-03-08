@@ -19,7 +19,7 @@ const Message = {
     emails.push(newEmail);
     res.status(201).json({
       status: 201,
-      data: { emails },
+      data: emails,
       Notification: 'email was created successfully',
     });
     next();
@@ -28,13 +28,25 @@ const Message = {
   getAllMessages(req, res, next) {
     res.status(200).json({
       status: 200,
-      data: { emails },
+      data: emails,
       message: 'list of inbox message',
     });
     next();
   },
-  
 
+  UnreadMessages(req, res, next) {
+    const unreads = emails.filter(e => e.status === 'unread');
+    if (!unreads.length) {
+      res.status(404).send('unread emails not found');
+    } else {
+      res.status(200).json({
+        status: 200,
+        data: unreads,
+        Notification: 'list of unreads',
+      });
+    }
+    next();
+  },
 };
 
 export default Message;
