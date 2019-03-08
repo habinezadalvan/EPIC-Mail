@@ -10,6 +10,6 @@ router.post('/api/v1/messages', message.createMessages);
 router.get('/api/v1/messages', message.getAllMessages);
 router.get('/api/v1/messages/unread', message.UnreadMessages);
 router.get('/api/v1/messages/sent', message.sentMessages);
-
+router.get('/api/v1/messages/:id', message.getOneEmail);
 
 export default router;
