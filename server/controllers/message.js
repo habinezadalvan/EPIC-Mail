@@ -35,7 +35,7 @@ const Message = {
     res.status(200).json({
       status: 200,
       data: emails,
-      message: 'list of inbox message',
+      message: 'list of inbox messages',
     });
     next();
   },
@@ -49,6 +49,19 @@ const Message = {
         status: 200,
         data: unreads,
         Notification: 'list of unreads',
+      });
+    }
+    next();
+  },
+  sentMessages(req, res, next) {
+    const sentEmails = emails.filter(e => e.status === 'sent');
+    if (!sentEmails.length) {
+      res.status(404).send('No sent emails found');
+    } else {
+      res.status(200).json({
+        status: 200,
+        data: sentEmails,
+        Notification: 'list of sent emails',
       });
     }
     next();
