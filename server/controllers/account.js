@@ -1,6 +1,8 @@
 import signup from '../models/signup';
 import login from '../models/login';
 
+import loginValidation from '../helpers/loginValidation';
+
 const account = {
 
   userSignup(req, res, next) {
@@ -21,6 +23,12 @@ const account = {
     next();
   },
   userLogin(req, res, next) {
+    const { error } = loginValidation.validateLogin(req.body);
+    if (error) {
+      res.status(400).send(error.details[0].message);
+      return;
+    }
+
     const newId = Number(login.length + 35);
     const newpwd = toString(req.body.password);
     const loginAccount = {
