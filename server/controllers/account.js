@@ -1,4 +1,5 @@
 import signup from '../models/signup';
+import login from '../models/login';
 import signUpValidation from '../helpers/signupValidation';
 
 const account = {
