@@ -16,5 +16,6 @@ router.get('/api/v1/messages/:id', message.getOneEmail);
 router.delete('/api/v1/messages/:id', message.deleteOneEmail);
 
 router.post('/api/v1/signup', account.userSignup);
+router.post('/api/v1/login', account.userLogin);
 
 export default router;
