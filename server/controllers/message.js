@@ -32,6 +32,7 @@ const Message = {
   },
 
   getAllMessages(req, res, next) {
+    if (!emails.length) res.status(404).send('not email found');
     res.status(200).json({
       status: 200,
       data: emails,
