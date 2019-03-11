@@ -1,5 +1,9 @@
 
+// This javascript validates the user's input before logging in to epic mail.
+
+// eslint-disable-next-line no-undef
 const loginInput = document.getElementById('loginPassword');
+// eslint-disable-next-line no-undef
 const submitButton = document.getElementById('submit');
 
 loginInput.addEventListener('input', ($event) => {
