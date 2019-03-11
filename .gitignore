@@ -1,2 +1,6 @@
 node_modules
+<<<<<<< HEAD
 node_modules
+=======
+.vscode
+>>>>>>> ft-sent-emails-#164322994
