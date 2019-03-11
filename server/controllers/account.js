@@ -1,3 +1,4 @@
+import lodash from 'lodash';
 import signup from '../models/signup';
 import signUpValidation from '../helpers/signupValidation';
 
@@ -22,7 +23,7 @@ const account = {
     signup.push(signupAccount);
     res.status(201).json({
       status: 201,
-      data: [],
+      data: lodash.pick(signupAccount, ['id', 'email', 'firstName', 'lastName']),
     });
     next();
   },
