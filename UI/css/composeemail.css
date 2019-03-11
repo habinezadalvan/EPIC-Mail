@@ -1,0 +1,277 @@
+/* START OF NAVBAR */
+
+body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.navbar{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    background: #2D142C;
+    position: fixed top;
+    color: white;
+    justify-content: space-between;
+    position: relative;
+    z-index: 3;
+}
+.navbar i.fa-bars{
+    margin: 30px auto 0;
+    display: none;
+}
+.profile{
+    margin: 15px 60px 0 0;
+  
+}
+
+.profile ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.profile ul li{
+    font-size: 16px;
+    font-family: sans-serif;
+    text-align: center;
+    background: #2D142C;
+  
+}
+.profile ul li a{
+    text-decoration: none;
+    color: white;
+    display: block;
+    
+}
+.profile ul li a:hover{
+    background: #510A32;
+}
+ul li ul li{
+    display: none;
+}
+ul li:hover ul li{
+    display: block;
+    
+}
+
+.profile img{
+    border-radius: 100%;
+       
+}
+/* .profile img:hover{
+    border: 1px solid rgba(216, 19, 19, 0.938);
+    opacity: .5;
+} */
+
+/* END OF NAVBAR */
+
+/* START OF SCROLL PART */
+
+.homecontainer{
+    margin:0;
+    padding:0;
+    width:100%;
+    height:650px;
+    display: flex;
+    flex-direction: row;
+}
+/* .scrollform{
+    width: 100%;
+    height: 400px;
+    overflow: scroll;
+} */
+.scroll{
+    background: white;
+    flex-basis: 20%;
+    background: url(../assets/images/scrollimage1.jpeg); 
+    box-shadow:3px 3px 10px black;
+}
+
+.scrollbuttons{
+   margin-top: 40px;
+}
+
+.scrollbuttons ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.scrollbuttons ul li{
+    margin: 0;
+    height: 50px;
+    font-size: 18px;
+    font-family: sans-serif;
+    background: rgba(0, 0, 0,0.5); 
+    
+}
+
+.scrollbuttons ul li a{
+margin-left: 10px;
+padding-top: 20px;
+height: 50px;
+text-decoration: none;
+color: white;
+display: block;
+
+}
+
+.scrollbuttons ul li a:hover{
+    background: #510A32;
+}
+
+.inboxmail{
+    float: right;
+    margin-right: 30px;
+}
+
+
+
+
+/* END OF BODY PART */
+
+/* START OF SEARCH PART */
+
+.bodypart{
+    
+    display: flex;
+    flex-direction: column;
+    flex-basis: 80%;  
+    position: relative;
+    z-index: 1;
+}
+.bodypart .bodypartsearch{
+    background: url(../assets/images/searcharea.jpeg);
+    background-size: cover;
+    display: flex;
+    flex-basis: 10%;
+    justify-content: space-between;  
+}
+.bodypart .bodypartview{
+    background:white;
+    flex-basis: 90%;
+    color: black;
+    overflow: scroll;
+}
+
+.searchform{
+    margin-top: 16px;
+}
+#searchicon{
+    display: flex;
+    align-items: center;
+    
+   }
+   .searchicon{
+       width: 70%;
+       font-size: 25px;
+   }
+   .searchicon input {
+       padding: 0;
+       width: 60%;
+       height: 40px;
+   }
+   .searchicon button{
+      width: 40px;
+      height: 40px;
+      font-size: 15px;
+     
+   }
+   .searchicon input, button{
+       border-radius: 5px;
+   }
+
+   .compose{
+    width: 12%;
+    height: 50px;
+    font-size: 20px;
+    background: rgba(0, 0, 0,0.5); 
+}
+
+.compose a {
+    text-decoration: none;  
+}
+.compose:hover{
+    background: #510A32; 
+}
+
+/* END OF SEARCH PART */
+
+/* START OF BODY PART VIEW */
+
+/* .bodypartview .message{
+margin-top: 10px;
+padding: 0;
+color: black;
+font-size: 20px;
+
+}
+.bodypartview .message a{
+    text-decoration: none;
+    color: black;
+    
+}
+
+.bodypartview .message input {
+    font-size: 20px;
+}
+.bodypartview .message:hover{
+    border: 1px solid rgba(0, 0, 0, .1);
+}
+
+.mailviewbutton:hover{
+    background: #510A32;
+} */
+
+/* END OF BODY VIEW PART */
+
+/* START OF COMPOSING EMAIL PART */
+
+.comoposecontainer{
+    width: 80%;
+    height: 560px;
+    margin: 2px auto 0;
+    background: white;
+    box-shadow: 2px 2px 10px black;
+}
+
+.composeform{
+    display: grid;
+    grid-template-columns: 1fr;
+    height: 500px;
+
+}
+
+.composesendpart {
+    height: 50px;
+    font-size: 25px;
+    padding-left: 20px;
+}
+
+.composeform h2 {
+   margin-left: 30px;
+}
+
+.composeform input{
+    height: 50px;
+    margin-top: -80px;
+    border-radius: 5px;
+}
+.composeform textarea{
+    margin-top: -90px;  
+}
+
+/* END OF COMPOSING EMAIL PART */
+
+
+/* FOOTER */
+
+.homefooter{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 50px;
+    text-align: center;
+}

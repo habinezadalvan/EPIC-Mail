@@ -1,0 +1,43 @@
+{
+  "name": "epic-mail",
+  "version": "1.0.0",
+  "description": "a web that helps people to exchange messages/information over the internet.",
+  "main": "index.js",
+  "scripts": {
+    "test": "nyc --reporter=html --reporter=text mocha --require @babel/core/register --timeout 5000 server/tests/*.js --exit",
+    "start": "nodemon --exec babel-node server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/habinezadalvan/Epic-Mail.git"
+  },
+  "author": "habineza leon christian",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/habinezadalvan/Epic-Mail/issues"
+  },
+  "homepage": "https://github.com/habinezadalvan/Epic-Mail#readme",
+  "dependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.3.4",
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.3.4",
+    "bcrypt": "^3.0.4",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "joi": "^13.1.0",
+    "jsonwebtoken": "^8.5.0",
+    "moment": "^2.24.0",
+    "nodemon": "^1.18.10"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.2.1",
+    "eslint": "^5.15.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "mocha": "^6.0.2",
+    "mocha-lcov-reporter": "^1.3.0",
+    "nyc": "^13.3.0"
+  }
+}

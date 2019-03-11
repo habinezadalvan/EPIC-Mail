@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/viewsentemail.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <title>View Sent|email</title>
+</head>
+<body>
+    <nav class="navbar">
+
+        <div class="icon">
+                <h1 id="homeicon"> <a href="#"><i class="fas fa-home fahome"></i></a> <span>Epic Mail</span></h1>
+        </div>
+        <i class="fas fa-bars"></i>
+        <div class="profile">
+                <img src="../assets/images/me.jpg" alt="image" width="40px" height="40px">
+                <ul>
+                    <li><a href="#">Christian H</a> 
+                        <ul>
+                            <li><a href="#">Profile</a></li>
+                            <li><a href="../index.html">Logout</a></li>
+                            <li><a href="resetpassword.html">password</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                
+        </div> 
+    </nav>
+   
+    <div class="homecontainer">
+        <div class="scroll">
+
+            <form action="#" class="scrollform">
+                    <div class="scrollbuttons">
+                            <ul>
+                                    <li><a href="home.html"><i class="fas fa-envelope"></i> &nbsp; Inbox <span class="inboxmail">234</span></a></li> <br>
+                                    <li><a href="sentemails.html"><i class="fas fa-paper-plane"></i> &nbsp; Sent<span class="inboxmail">64</span></a></li> <br>
+                                    <li><a href="drafts.html"><i class="fas fa-file"></i> &nbsp; Draft<span class="inboxmail">34</span></a></li> <br>
+                                    <li><a href="#"><i class="fas fa-trash-alt"></i> &nbsp; Trash <span class="inboxmail">84</span></a></li> <br>
+                                    <li><a href="#"><i class="fas fa-users"></i>&nbsp; groups</a>
+                                        <ul>
+                                            <li><a href="#"><i class="fas fa-users"></i>&nbsp; View Groups <span class="inboxmail">4</span></a> <br>
+                                            <li><a href="creategroup.html"><i class="fas fa-plus"></i>&nbsp; Create a Group</a>
+                                        </ul>
+                                    </li>
+                                    
+                            </ul>
+        
+                    </div>
+            </form>
+            
+
+        </div>
+        <div class="bodypart">
+            <div class="bodypartsearch">
+
+                    <button class="compose"><a href="composeemail.html"><i class="fas fa-plus"></i> &nbsp; Compose</a></button>
+                    <div class="searchicon">
+                        <form action="#" class="searchform">
+                            <input type="search" name="search" placeholder="Search ..."> 
+                            <button><i class="fas fa-search" ></i> </button>                           
+                        </form>
+                    </div>
+                  
+            </div>
+ <!--VIEW SENT EMAIL PART-->
+            <div class="bodypartview">
+                <div class="viewcontainer">
+                    <div class="viewform">
+                        <h2><i class="far fa-envelope-open"></i> &nbsp; <strong>Greetings from your friend:</strong></h2>
+                        <h4> <small>To:<i class="fas fa-angle-right"></i></small> <strong>Gakwaya Raymond</strong> <small></small></h4>
+                        <i class="far fa-clock"></i>12:50AM
+                    </div>
+                    <hr>
+                    <div class="viewmessagearea">
+                        <p>Dear Raymond,</p>
+                        <p>I hope this finds you well. Anyway it's been long without catching up ...Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, laborum eius quod beatae suscipit blanditiis incidunt tempore totam inventore dignissimos veniam, animi deleniti sunt aliquam nisi iure excepturi corrupti veritatis?</p>
+
+                    </div>
+                    <div class="viewmessagepart">
+                        <button type="submit"><i class="fas fa-undo"></i>Unsend</button>
+                        <button type="submit"><i class="fas fa-chevron-circle-right"></i> forward</button>
+                        <button type="submit"> <i class="fas fa-trash-alt"></i> move to trash</button>
+                       
+                    </div>
+                </div>
+
+            </div>
+<!--END OF VIEW SENT EMAIL-->
+        </div>
+    </div>
+    
+    <footer>
+        <div class="homefooter">
+            <p class="text-bottom">copyright &copy; 2019 habineza leon christian (the developer)</p>
+        </div>
+    </footer>
+</body>
+</html>
