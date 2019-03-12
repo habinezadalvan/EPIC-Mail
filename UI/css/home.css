@@ -5,7 +5,7 @@ body{
     padding: 0;
     width: 100%;
 }
-
+/* this styles the navigation bar of the home page */
 .navbar{
     width: 100%;
     height: 80px;
@@ -60,6 +60,12 @@ ul li:hover ul li{
     border-radius: 100%;
        
 }
+
+.logoutarea{
+    margin: 10px 0;
+}
+
+
 /* .profile img:hover{
     border: 1px solid rgba(216, 19, 19, 0.938);
     opacity: .5;
@@ -68,6 +74,8 @@ ul li:hover ul li{
 /* END OF NAVBAR */
 
 /* START OF SCROLL PART */
+
+/* this style the left side that contains menu */
 
 .homecontainer{
     margin:0;
@@ -133,6 +141,8 @@ display: block;
 /* END OF BODY PART */
 
 /* START OF SEARCH PART */
+
+/* this styles the fixed part that contains search area */
 
 .bodypart{
     
@@ -201,35 +211,66 @@ display: block;
 
 /* START OF BODY PART VIEW */
 
+/* this style the part in the middle that contains all messages */
+
 .bodypartview .message{
 margin-top: 10px;
 padding: 0;
 color: black;
 font-size: 20px;
-
 }
 .bodypartview .message a{
     text-decoration: none;
     color: black;
     
 }
+/* this style is for checkbox */
+.inboxinput{
 
-.bodypartview .message input {
-    font-size: 20px;
+    width: 20px;
+    height: 20px;
 }
+/* this style hovers the whole message */
 .bodypartview .message:hover{
-    border: 1px solid rgba(0, 0, 0, .1);
+    background: gray;
+    /* border: 1px solid rgba(0, 0, 0, .1); */
 }
+/* this style hovers the view button in the right side the email */
 
 .mailviewbutton:hover{
     background: #510A32;
 }
+/* this style puts the message content in line and sets margin */
+.inboxm{
+    display: inline;
+    margin: 10px 0 10px 30px;
 
+}
+
+.time {
+    padding-right: 10px;
+}
+
+.subject{
+    font-family: arial;
+}
 /* END OF BODY VIEW PART */
+
+/* this style is particularly for aftersignup page */
+
+.trashclass{
+    text-align: center;
+    margin-top: 100px;
+    color: #510A32;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 
 
 /* FOOTER */
 
+/* this styles the footer of the page */
 .homefooter{
     margin: 0;
     padding: 0;
@@ -237,3 +278,4 @@ font-size: 20px;
     height: 50px;
     text-align: center;
 }
+

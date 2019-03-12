@@ -4,10 +4,16 @@
 // also imported signup model and sign up validation.
 import lodash from 'lodash';
 import signup from '../models/signup';
+import login from '../models/login';
 import signUpValidation from '../helpers/signupValidation';
+
 
 // this object contains the signup and login methods that will be used as controllers and
 // exported to the router file.
+
+import loginValidation from '../helpers/loginValidation';
+
+
 const account = {
 // this is the signup method that will be executed whenever user enters the required input
   userSignup(req, res, next) {
@@ -40,6 +46,27 @@ const account = {
     res.status(201).json({
       status: 201,
       data: lodash.pick(signupAccount, ['id', 'email', 'firstName', 'lastName']), // lodash.pick picks only what i want the use to see, i removed password and confirmPassword
+    });
+    next();
+  },
+  userLogin(req, res, next) {
+    const { error } = loginValidation.validateLogin(req.body);
+    if (error) {
+      res.status(400).send(error.details[0].message);
+      return;
+    }
+
+    const newId = Number(login.length + 35);
+    const newpwd = toString(req.body.password);
+    const loginAccount = {
+      id: newId,
+      email: req.body.email,
+      password: newpwd,
+    };
+    login.push(loginAccount);
+    res.status(201).json({
+      status: 201,
+      data: [],
     });
     next();
   },

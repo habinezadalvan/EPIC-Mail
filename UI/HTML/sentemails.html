@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/sentemails.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <title>Sent|emails</title>
 </head>
@@ -18,19 +18,21 @@
         <div class="profile">
                 <img src="../assets/images/me.jpg" alt="image" width="40px" height="40px">
                 <ul>
-                    <li><a href="#">Christian H</a> 
-                        <ul>
-                            <li><a href="#">Profile</a></li>
-                            <li><a href="../index.html">Logout</a></li>
-                            <li><a href="resetpassword.html">password</a></li>
-                        </ul>
-                    </li>
-                </ul>
+                        <li><a href="#">Christian H</a> 
+                            <ul>
+                                <li class="logoutarea"><a href="#">Profile</a></li>
+                                <li class="logoutarea"><a href="../index.html">Logout</a></li>
+                                <li class="logoutarea"><a href="resetpassword.html">password</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+    
                 
         </div> 
     </nav>
    
     <div class="homecontainer">
+        <!-- this part is for the side bar in the left side that contains menu -->
         <div class="scroll">
 
             <form action="#" class="scrollform">
@@ -39,7 +41,7 @@
                                     <li><a href="home.html"><i class="fas fa-envelope"></i> &nbsp; Inbox <span class="inboxmail">234</span></a></li> <br>
                                     <li><a href="sentemails.html"><i class="fas fa-paper-plane"></i> &nbsp; Sent<span class="inboxmail">64</span></a></li> <br>
                                     <li><a href="drafts.html"><i class="fas fa-file"></i> &nbsp; Draft<span class="inboxmail">34</span></a></li> <br>
-                                    <li><a href="#"><i class="fas fa-trash-alt"></i> &nbsp; Trash <span class="inboxmail">84</span></a></li> <br>
+                                    <li><a href="trash.html"><i class="fas fa-trash-alt"></i> &nbsp; Trash <span class="inboxmail">84</span></a></li> <br>
                                     <li><a href="#"><i class="fas fa-users"></i>&nbsp; groups</a>
                                         <ul>
                                             <li><a href="#"><i class="fas fa-users"></i>&nbsp; View Groups <span class="inboxmail">4</span></a> <br>
@@ -54,6 +56,7 @@
             
 
         </div>
+        <!-- this part is for the fixed part above messages that contains search area -->
         <div class="bodypart">
             <div class="bodypartsearch">
 
@@ -67,78 +70,94 @@
                   
             </div>
             <div class="bodypartview">
+      <!-- this part is for the sent emails -->
 
-
                 <div class="message">
-                    <a href="viewsentemail.html"><input type="checkbox"><i class="fas fa-paper-plane"></i></i> &npar; <strong>Gakwaya Raymond</strong>  &npar; &npar; <strong>Request for javascript documents:</strong> <small>Hello Raymond! would you please sent me some documents about javas...</small> <span class="time">10:23AM <i class="fas fa-trash-alt"></i> <button class="mailviewbutton"><i class="fas fa-redo"></i>unsend</button></span></a>
+                    <a href="viewemail.html"><input type="checkbox" class="inboxinput"><i class="far fa-paper-plane inboxm"></i><p class="inboxm subject"> To: Gakwaya Raymond</p> <span class="inboxm"></span> <span class="inboxm"></span> <p class="inboxm subject">greeting from christian:</p> <small class="inboxm">Hello my brother raymond! how are you doing today...</small> <span class="inboxm"> <small class="time">11:12 am</small> <i class="fas fa-trash-alt time"></i> <button class="mailviewbutton time">unsend</button></span></a>
                 </div>
                 <hr>
                 <div class="message">
-                    <a href="viewsentemail.html"><input type="checkbox"><i class="fas fa-paper-plane"></i></i> &npar; <strong>Gakwaya Raymond</strong>  &npar; &npar; <strong>Request for javascript documents:</strong> <small>Hello Raymond! would you please sent me some documents about javas...</small> <span class="time">10:23AM <i class="fas fa-trash-alt"></i> <button class="mailviewbutton"><i class="fas fa-redo"></i>unsend</button></span></a>
+                    <a href="viewemail.html"><input type="checkbox" class="inboxinput"><i class="far fa-paper-plane inboxm"></i><p class="inboxm subject"> To: Gakwaya Raymond</p> <span class="inboxm"></span> <span class="inboxm"></span> <p class="inboxm subject">greeting from christian:</p> <small class="inboxm">Hello my brother raymond! how are you doing today...</small> <span class="inboxm"> <small class="time">11:12 am</small> <i class="fas fa-trash-alt time"></i> <button class="mailviewbutton time">unsend</button></span></a>
                 </div>
                 <hr>
                 <div class="message">
-                    <a href="viewsentemail.html"><input type="checkbox"><i class="fas fa-paper-plane"></i></i> &npar; <strong>Gakwaya Raymond</strong>  &npar; &npar; <strong>Request for javascript documents:</strong> <small>Hello Raymond! would you please sent me some documents about javas...</small> <span class="time">10:23AM <i class="fas fa-trash-alt"></i> <button class="mailviewbutton"><i class="fas fa-redo"></i>unsend</button></span></a>
+                    <a href="viewemail.html"><input type="checkbox" class="inboxinput"><i class="far fa-paper-plane inboxm"></i><p class="inboxm subject"> To: Gakwaya Raymond</p> <span class="inboxm"></span> <span class="inboxm"></span> <p class="inboxm subject">greeting from christian:</p> <small class="inboxm">Hello my brother raymond! how are you doing today...</small> <span class="inboxm"> <small class="time">11:12 am</small> <i class="fas fa-trash-alt time"></i> <button class="mailviewbutton time">unsend</button></span></a>
                 </div>
                 <hr>
                 <div class="message">
-                    <a href="viewsentemail.html"><input type="checkbox"><i class="fas fa-paper-plane"></i></i> &npar; <strong>Gakwaya Raymond</strong>  &npar; &npar; <strong>Request for javascript documents:</strong> <small>Hello Raymond! would you please sent me some documents about javas...</small> <span class="time">10:23AM <i class="fas fa-trash-alt"></i> <button class="mailviewbutton"><i class="fas fa-redo"></i>unsend</button></span></a>
+                    <a href="viewemail.html"><input type="checkbox" class="inboxinput"><i class="far fa-paper-plane inboxm"></i><p class="inboxm subject"> To: Gakwaya Raymond</p> <span class="inboxm"></span> <span class="inboxm"></span> <p class="inboxm subject">greeting from christian:</p> <small class="inboxm">Hello my brother raymond! how are you doing today...</small> <span class="inboxm"> <small class="time">11:12 am</small> <i class="fas fa-trash-alt time"></i> <button class="mailviewbutton time">unsend</button></span></a>
                 </div>
                 <hr>
                 <div class="message">
-                    <a href="viewsentemail.html"><input type="checkbox"><i class="fas fa-paper-plane"></i></i> &npar; <strong>Gakwaya Raymond</strong>  &npar; &npar; <strong>Request for javascript documents:</strong> <small>Hello Raymond! would you please sent me some documents about javas...</small> <span class="time">10:23AM <i class="fas fa-trash-alt"></i> <button class="mailviewbutton"><i class="fas fa-redo"></i>unsend</button></span></a>
+                    <a href="viewemail.html"><input type="checkbox" class="inboxinput"><i class="far fa-paper-plane inboxm"></i><p class="inboxm subject"> To: Gakwaya Raymond</p> <span class="inboxm"></span> <span class="inboxm"></span> <p class="inboxm subject">greeting from christian:</p> <small class="inboxm">Hello my brother raymond! how are you doing today...</small> <span class="inboxm"> <small class="time">11:12 am</small> <i class="fas fa-trash-alt time"></i> <button class="mailviewbutton time">unsend</button></span></a>
                 </div>
                 <hr>
                 <div class="message">
-                    <a href="viewsentemail.html"><input type="checkbox"><i class="fas fa-paper-plane"></i></i> &npar; <strong>Gakwaya Raymond</strong>  &npar; &npar; <strong>Request for javascript documents:</strong> <small>Hello Raymond! would you please sent me some documents about javas...</small> <span class="time">10:23AM <i class="fas fa-trash-alt"></i> <button class="mailviewbutton"><i class="fas fa-redo"></i>unsend</button></span></a>
+                    <a href="viewemail.html"><input type="checkbox" class="inboxinput"><i class="far fa-paper-plane inboxm"></i><p class="inboxm subject"> To: Gakwaya Raymond</p> <span class="inboxm"></span> <span class="inboxm"></span> <p class="inboxm subject">greeting from christian:</p> <small class="inboxm">Hello my brother raymond! how are you doing today...</small> <span class="inboxm"> <small class="time">11:12 am</small> <i class="fas fa-trash-alt time"></i> <button class="mailviewbutton time">unsend</button></span></a>
                 </div>
                 <hr>
                 <div class="message">
-                    <a href="viewsentemail.html"><input type="checkbox"><i class="fas fa-paper-plane"></i></i> &npar; <strong>Gakwaya Raymond</strong>  &npar; &npar; <strong>Request for javascript documents:</strong> <small>Hello Raymond! would you please sent me some documents about javas...</small> <span class="time">10:23AM <i class="fas fa-trash-alt"></i> <button class="mailviewbutton"><i class="fas fa-redo"></i>unsend</button></span></a>
+                    <a href="viewemail.html"><input type="checkbox" class="inboxinput"><i class="far fa-paper-plane inboxm"></i><p class="inboxm subject"> To: Gakwaya Raymond</p> <span class="inboxm"></span> <span class="inboxm"></span> <p class="inboxm subject">greeting from christian:</p> <small class="inboxm">Hello my brother raymond! how are you doing today...</small> <span class="inboxm"> <small class="time">11:12 am</small> <i class="fas fa-trash-alt time"></i> <button class="mailviewbutton time">unsend</button></span></a>
                 </div>
                 <hr>
                 <div class="message">
-                    <a href="viewsentemail.html"><input type="checkbox"><i class="fas fa-paper-plane"></i></i> &npar; <strong>Gakwaya Raymond</strong>  &npar; &npar; <strong>Request for javascript documents:</strong> <small>Hello Raymond! would you please sent me some documents about javas...</small> <span class="time">10:23AM <i class="fas fa-trash-alt"></i> <button class="mailviewbutton"><i class="fas fa-redo"></i>unsend</button></span></a>
+                    <a href="viewemail.html"><input type="checkbox" class="inboxinput"><i class="far fa-paper-plane inboxm"></i><p class="inboxm subject"> To: Gakwaya Raymond</p> <span class="inboxm"></span> <span class="inboxm"></span> <p class="inboxm subject">greeting from christian:</p> <small class="inboxm">Hello my brother raymond! how are you doing today...</small> <span class="inboxm"> <small class="time">11:12 am</small> <i class="fas fa-trash-alt time"></i> <button class="mailviewbutton time">unsend</button></span></a>
                 </div>
                 <hr>
                 <div class="message">
-                    <a href="viewsentemail.html"><input type="checkbox"><i class="fas fa-paper-plane"></i></i> &npar; <strong>Gakwaya Raymond</strong>  &npar; &npar; <strong>Request for javascript documents:</strong> <small>Hello Raymond! would you please sent me some documents about javas...</small> <span class="time">10:23AM <i class="fas fa-trash-alt"></i> <button class="mailviewbutton"><i class="fas fa-redo"></i>unsend</button></span></a>
+                    <a href="viewemail.html"><input type="checkbox" class="inboxinput"><i class="far fa-paper-plane inboxm"></i><p class="inboxm subject"> To: Gakwaya Raymond</p> <span class="inboxm"></span> <span class="inboxm"></span> <p class="inboxm subject">greeting from christian:</p> <small class="inboxm">Hello my brother raymond! how are you doing today...</small> <span class="inboxm"> <small class="time">11:12 am</small> <i class="fas fa-trash-alt time"></i> <button class="mailviewbutton time">unsend</button></span></a>
                 </div>
                 <hr>
                 <div class="message">
-                    <a href="viewsentemail.html"><input type="checkbox"><i class="fas fa-paper-plane"></i></i> &npar; <strong>Gakwaya Raymond</strong>  &npar; &npar; <strong>Request for javascript documents:</strong> <small>Hello Raymond! would you please sent me some documents about javas...</small> <span class="time">10:23AM <i class="fas fa-trash-alt"></i> <button class="mailviewbutton"><i class="fas fa-redo"></i>unsend</button></span></a>
+                    <a href="viewemail.html"><input type="checkbox" class="inboxinput"><i class="far fa-paper-plane inboxm"></i><p class="inboxm subject"> To: Gakwaya Raymond</p> <span class="inboxm"></span> <span class="inboxm"></span> <p class="inboxm subject">greeting from christian:</p> <small class="inboxm">Hello my brother raymond! how are you doing today...</small> <span class="inboxm"> <small class="time">11:12 am</small> <i class="fas fa-trash-alt time"></i> <button class="mailviewbutton time">unsend</button></span></a>
                 </div>
                 <hr>
                 <div class="message">
-                    <a href="viewsentemail.html"><input type="checkbox"><i class="fas fa-paper-plane"></i></i> &npar; <strong>Gakwaya Raymond</strong>  &npar; &npar; <strong>Request for javascript documents:</strong> <small>Hello Raymond! would you please sent me some documents about javas...</small> <span class="time">10:23AM <i class="fas fa-trash-alt"></i> <button class="mailviewbutton"><i class="fas fa-redo"></i>unsend</button></span></a>
+                    <a href="viewemail.html"><input type="checkbox" class="inboxinput"><i class="far fa-paper-plane inboxm"></i><p class="inboxm subject"> To: Gakwaya Raymond</p> <span class="inboxm"></span> <span class="inboxm"></span> <p class="inboxm subject">greeting from christian:</p> <small class="inboxm">Hello my brother raymond! how are you doing today...</small> <span class="inboxm"> <small class="time">11:12 am</small> <i class="fas fa-trash-alt time"></i> <button class="mailviewbutton time">unsend</button></span></a>
                 </div>
                 <hr>
                 <div class="message">
-                    <a href="viewsentemail.html"><input type="checkbox"><i class="fas fa-paper-plane"></i></i> &npar; <strong>Gakwaya Raymond</strong>  &npar; &npar; <strong>Request for javascript documents:</strong> <small>Hello Raymond! would you please sent me some documents about javas...</small> <span class="time">10:23AM <i class="fas fa-trash-alt"></i> <button class="mailviewbutton"><i class="fas fa-redo"></i>unsend</button></span></a>
+                    <a href="viewemail.html"><input type="checkbox" class="inboxinput"><i class="far fa-paper-plane inboxm"></i><p class="inboxm subject"> To: Gakwaya Raymond</p> <span class="inboxm"></span> <span class="inboxm"></span> <p class="inboxm subject">greeting from christian:</p> <small class="inboxm">Hello my brother raymond! how are you doing today...</small> <span class="inboxm"> <small class="time">11:12 am</small> <i class="fas fa-trash-alt time"></i> <button class="mailviewbutton time">unsend</button></span></a>
                 </div>
                 <hr>
                 <div class="message">
-                    <a href="viewsentemail.html"><input type="checkbox"><i class="fas fa-paper-plane"></i></i> &npar; <strong>Gakwaya Raymond</strong>  &npar; &npar; <strong>Request for javascript documents:</strong> <small>Hello Raymond! would you please sent me some documents about javas...</small> <span class="time">10:23AM <i class="fas fa-trash-alt"></i> <button class="mailviewbutton"><i class="fas fa-redo"></i>unsend</button></span></a>
+                    <a href="viewemail.html"><input type="checkbox" class="inboxinput"><i class="far fa-paper-plane inboxm"></i><p class="inboxm subject"> To: Gakwaya Raymond</p> <span class="inboxm"></span> <span class="inboxm"></span> <p class="inboxm subject">greeting from christian:</p> <small class="inboxm">Hello my brother raymond! how are you doing today...</small> <span class="inboxm"> <small class="time">11:12 am</small> <i class="fas fa-trash-alt time"></i> <button class="mailviewbutton time">unsend</button></span></a>
                 </div>
                 <hr>
                 <div class="message">
-                    <a href="viewsentemail.html"><input type="checkbox"><i class="fas fa-paper-plane"></i></i> &npar; <strong>Gakwaya Raymond</strong>  &npar; &npar; <strong>Request for javascript documents:</strong> <small>Hello Raymond! would you please sent me some documents about javas...</small> <span class="time">10:23AM <i class="fas fa-trash-alt"></i> <button class="mailviewbutton"><i class="fas fa-redo"></i>unsend</button></span></a>
+                    <a href="viewemail.html"><input type="checkbox" class="inboxinput"><i class="far fa-paper-plane inboxm"></i><p class="inboxm subject"> To: Gakwaya Raymond</p> <span class="inboxm"></span> <span class="inboxm"></span> <p class="inboxm subject">greeting from christian:</p> <small class="inboxm">Hello my brother raymond! how are you doing today...</small> <span class="inboxm"> <small class="time">11:12 am</small> <i class="fas fa-trash-alt time"></i> <button class="mailviewbutton time">unsend</button></span></a>
                 </div>
                 <hr>
                 <div class="message">
-                    <a href="viewsentemail.html"><input type="checkbox"><i class="fas fa-paper-plane"></i></i> &npar; <strong>Gakwaya Raymond</strong>  &npar; &npar; <strong>Request for javascript documents:</strong> <small>Hello Raymond! would you please sent me some documents about javas...</small> <span class="time">10:23AM <i class="fas fa-trash-alt"></i> <button class="mailviewbutton"><i class="fas fa-redo"></i>unsend</button></span></a>
+                    <a href="viewemail.html"><input type="checkbox" class="inboxinput"><i class="far fa-paper-plane inboxm"></i><p class="inboxm subject"> To: Gakwaya Raymond</p> <span class="inboxm"></span> <span class="inboxm"></span> <p class="inboxm subject">greeting from christian:</p> <small class="inboxm">Hello my brother raymond! how are you doing today...</small> <span class="inboxm"> <small class="time">11:12 am</small> <i class="fas fa-trash-alt time"></i> <button class="mailviewbutton time">unsend</button></span></a>
                 </div>
                 <hr>
                 <div class="message">
-                    <a href="viewsentemail.html"><input type="checkbox"><i class="fas fa-paper-plane"></i></i> &npar; <strong>Gakwaya Raymond</strong>  &npar; &npar; <strong>Request for javascript documents:</strong> <small>Hello Raymond! would you please sent me some documents about javas...</small> <span class="time">10:23AM <i class="fas fa-trash-alt"></i> <button class="mailviewbutton"><i class="fas fa-redo"></i>unsend</button></span></a>
+                    <a href="viewemail.html"><input type="checkbox" class="inboxinput"><i class="far fa-paper-plane inboxm"></i><p class="inboxm subject"> To: Gakwaya Raymond</p> <span class="inboxm"></span> <span class="inboxm"></span> <p class="inboxm subject">greeting from christian:</p> <small class="inboxm">Hello my brother raymond! how are you doing today...</small> <span class="inboxm"> <small class="time">11:12 am</small> <i class="fas fa-trash-alt time"></i> <button class="mailviewbutton time">unsend</button></span></a>
                 </div>
                 <hr>
                 <div class="message">
-                    <a href="viewsentemail.html"><input type="checkbox"><i class="fas fa-paper-plane"></i></i> &npar; <strong>Gakwaya Raymond</strong>  &npar; &npar; <strong>Request for javascript documents:</strong> <small>Hello Raymond! would you please sent me some documents about javas...</small> <span class="time">10:23AM <i class="fas fa-trash-alt"></i> <button class="mailviewbutton"><i class="fas fa-redo"></i>unsend</button></span></a>
+                    <a href="viewemail.html"><input type="checkbox" class="inboxinput"><i class="far fa-paper-plane inboxm"></i><p class="inboxm subject"> To: Gakwaya Raymond</p> <span class="inboxm"></span> <span class="inboxm"></span> <p class="inboxm subject">greeting from christian:</p> <small class="inboxm">Hello my brother raymond! how are you doing today...</small> <span class="inboxm"> <small class="time">11:12 am</small> <i class="fas fa-trash-alt time"></i> <button class="mailviewbutton time">unsend</button></span></a>
                 </div>
                 <hr>
                 <div class="message">
-                    <a href="viewsentemail.html"><input type="checkbox"><i class="fas fa-paper-plane"></i></i> &npar; <strong>Gakwaya Raymond</strong>  &npar; &npar; <strong>Request for javascript documents:</strong> <small>Hello Raymond! would you please sent me some documents about javas...</small> <span class="time">10:23AM <i class="fas fa-trash-alt"></i> <button class="mailviewbutton"><i class="fas fa-redo"></i>unsend</button></span></a>
+                    <a href="viewemail.html"><input type="checkbox" class="inboxinput"><i class="far fa-paper-plane inboxm"></i><p class="inboxm subject"> To: Gakwaya Raymond</p> <span class="inboxm"></span> <span class="inboxm"></span> <p class="inboxm subject">greeting from christian:</p> <small class="inboxm">Hello my brother raymond! how are you doing today...</small> <span class="inboxm"> <small class="time">11:12 am</small> <i class="fas fa-trash-alt time"></i> <button class="mailviewbutton time">unsend</button></span></a>
+                </div>
+                <hr>
+                <div class="message">
+                    <a href="viewemail.html"><input type="checkbox" class="inboxinput"><i class="far fa-paper-plane inboxm"></i><p class="inboxm subject"> To: Gakwaya Raymond</p> <span class="inboxm"></span> <span class="inboxm"></span> <p class="inboxm subject">greeting from christian:</p> <small class="inboxm">Hello my brother raymond! how are you doing today...</small> <span class="inboxm"> <small class="time">11:12 am</small> <i class="fas fa-trash-alt time"></i> <button class="mailviewbutton time">unsend</button></span></a>
+                </div>
+                <hr>
+                <div class="message">
+                    <a href="viewemail.html"><input type="checkbox" class="inboxinput"><i class="far fa-paper-plane inboxm"></i><p class="inboxm subject"> To: Gakwaya Raymond</p> <span class="inboxm"></span> <span class="inboxm"></span> <p class="inboxm subject">greeting from christian:</p> <small class="inboxm">Hello my brother raymond! how are you doing today...</small> <span class="inboxm"> <small class="time">11:12 am</small> <i class="fas fa-trash-alt time"></i> <button class="mailviewbutton time">unsend</button></span></a>
+                </div>
+                <hr>
+                <div class="message">
+                    <a href="viewemail.html"><input type="checkbox" class="inboxinput"><i class="far fa-paper-plane inboxm"></i><p class="inboxm subject"> To: Gakwaya Raymond</p> <span class="inboxm"></span> <span class="inboxm"></span> <p class="inboxm subject">greeting from christian:</p> <small class="inboxm">Hello my brother raymond! how are you doing today...</small> <span class="inboxm"> <small class="time">11:12 am</small> <i class="fas fa-trash-alt time"></i> <button class="mailviewbutton time">unsend</button></span></a>
+                </div>
+                <hr>
+                <div class="message">
+                    <a href="viewemail.html"><input type="checkbox" class="inboxinput"><i class="far fa-paper-plane inboxm"></i><p class="inboxm subject"> To: Gakwaya Raymond</p> <span class="inboxm"></span> <span class="inboxm"></span> <p class="inboxm subject">greeting from christian:</p> <small class="inboxm">Hello my brother raymond! how are you doing today...</small> <span class="inboxm"> <small class="time">11:12 am</small> <i class="fas fa-trash-alt time"></i> <button class="mailviewbutton time">unsend</button></span></a>
                 </div>
                 <hr>
                 
@@ -146,7 +165,7 @@
             </div>
         </div>
     </div>
-    
+    <!-- this part is for the footer -->
     <footer>
         <div class="homefooter">
             <p class="text-bottom">copyright &copy; 2019 habineza leon christian (the developer)</p>
