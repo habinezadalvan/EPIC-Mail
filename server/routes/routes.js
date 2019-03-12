@@ -6,6 +6,7 @@ import account from '../controllers/account';
 
 
 const router = express.Router();
+// the following lines are the routes for all endpoints
 
 router.post('/api/v1/messages', message.createMessages);
 
@@ -17,9 +18,7 @@ router.delete('/api/v1/messages/:id', message.deleteOneEmail);
 
 
 router.post('/api/v1/auth/signup', account.userSignup);
-
-router.post('/api/v1/signup', account.userSignup);
-router.post('/api/v1/login', account.userLogin);
+router.post('/api/v1/auth/login', account.userLogin);
 
 
 export default router;

@@ -50,23 +50,26 @@ const account = {
     next();
   },
   userLogin(req, res, next) {
+    // the line adds validation to login api endpoint using JOI
     const { error } = loginValidation.validateLogin(req.body);
     if (error) {
       res.status(400).send(error.details[0].message);
       return;
     }
-
+    // this line sets the id to in number and password to be string
     const newId = Number(login.length + 35);
     const newpwd = toString(req.body.password);
+    // this line creates the login data structure that should be stored in the login empty array
     const loginAccount = {
       id: newId,
       email: req.body.email,
       password: newpwd,
     };
+    // this line pushes the entered login date to the login model
     login.push(loginAccount);
     res.status(201).json({
       status: 201,
-      data: [],
+      data: lodash.pick(loginAccount, ['id', 'email']),
     });
     next();
   },
