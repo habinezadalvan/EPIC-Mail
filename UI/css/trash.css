@@ -75,7 +75,8 @@ ul li:hover ul li{
 
 /* START OF SCROLL PART */
 
-/* this part is for the side bar in the left side that contains menu  */
+/* this style the left side that contains menu */
+
 .homecontainer{
     margin:0;
     padding:0;
@@ -84,11 +85,7 @@ ul li:hover ul li{
     display: flex;
     flex-direction: row;
 }
-/* .scrollform{
-    width: 100%;
-    height: 400px;
-    overflow: scroll;
-} */
+
 .scroll{
     background: white;
     flex-basis: 20%;
@@ -97,47 +94,52 @@ ul li:hover ul li{
 }
 
 .scrollbuttons{
-   margin-top: 40px;
+   margin-top: 0px;
 }
 
 .scrollbuttons ul{
     margin: 0;
     padding: 0;
     list-style: none;
+    height: 50px;
+    margin-top: 10px;
 }
 
 .scrollbuttons ul li{
     margin: 0;
+    padding-top: 10px;
     height: 50px;
     font-size: 18px;
     font-family: sans-serif;
     background: rgba(0, 0, 0,0.5); 
-    
+   
 }
 
 .scrollbuttons ul li a{
-margin-left: 10px;
-padding-top: 20px;
-height: 50px;
+margin-top: 5px;
 text-decoration: none;
 color: white;
 display: block;
 
 }
 
-.scrollbuttons ul li a:hover{
+.scrollbuttons ul li:hover{
     background: #510A32;
 }
 
 .inboxmail{
     float: right;
-    margin-right: 30px;
+    margin-right: 40px;
+}
+
+.iconclass {
+    margin-left: 14px;
 }
 
 
 
-
 /* END OF BODY PART */
+
 
 /* START OF SEARCH PART */
 
