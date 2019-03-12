@@ -39,7 +39,7 @@ const account = {
     signup.push(signupAccount);
     res.status(201).json({
       status: 201,
-      data: lodash.pick(signupAccount, ['id', 'email', 'firstName', 'lastName']), //lodash.pick picks only what i want the use to see, i removed password and confirmPassword
+      data: lodash.pick(signupAccount, ['id', 'email', 'firstName', 'lastName']), // lodash.pick picks only what i want the use to see, i removed password and confirmPassword
     });
     next();
   },
@@ -47,4 +47,4 @@ const account = {
 
 // this line exports the account controller to the router
 
-export default account; 
+export default account;
