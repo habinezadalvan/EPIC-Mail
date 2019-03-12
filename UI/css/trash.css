@@ -5,7 +5,7 @@ body{
     padding: 0;
     width: 100%;
 }
-/* this styles the navigation bar of the home page */
+
 .navbar{
     width: 100%;
     height: 80px;
@@ -61,10 +61,10 @@ ul li:hover ul li{
        
 }
 
+
 .logoutarea{
     margin: 10px 0;
 }
-
 
 /* .profile img:hover{
     border: 1px solid rgba(216, 19, 19, 0.938);
@@ -75,8 +75,7 @@ ul li:hover ul li{
 
 /* START OF SCROLL PART */
 
-/* this style the left side that contains menu */
-
+/* this part is for the side bar in the left side that contains menu  */
 .homecontainer{
     margin:0;
     padding:0;
@@ -142,8 +141,7 @@ display: block;
 
 /* START OF SEARCH PART */
 
-/* this styles the fixed part that contains search area */
-
+/* this part is for the fixed part above messages that contains search area */
 .bodypart{
     
     display: flex;
@@ -211,19 +209,24 @@ display: block;
 
 /* START OF BODY PART VIEW */
 
-/* this style the part in the middle that contains all messages */
-
 .bodypartview .message{
 margin-top: 10px;
 padding: 0;
 color: black;
 font-size: 20px;
+
 }
 .bodypartview .message a{
     text-decoration: none;
     color: black;
     
 }
+
+.mailviewbutton:hover{
+    background: #510A32;
+}
+
+
 /* this style is for checkbox */
 .inboxinput{
 
@@ -254,23 +257,13 @@ font-size: 20px;
 .subject{
     font-family: arial;
 }
+
+
 /* END OF BODY VIEW PART */
-
-/* this style is particularly for aftersignup page */
-
-.trashclass{
-    text-align: center;
-    margin-top: 100px;
-    color: #510A32;
-    font-size: 20px;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
 
 
 /* FOOTER */
 
-/* this styles the footer of the page */
 .homefooter{
     margin: 0;
     padding: 0;
@@ -278,4 +271,3 @@ font-size: 20px;
     height: 50px;
     text-align: center;
 }
-
