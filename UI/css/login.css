@@ -1,10 +1,11 @@
 /* START OF LOGIN PAGE */
+
 body{
     margin: 0;
     padding: 0;
     width: 100%;
 }
-
+/* this the begging of nav bar css style */
 .navbar{
     width: 100%;
     display: flex;
@@ -61,6 +62,9 @@ body{
     font-size: 100px;
     color: #2D142C;
 }
+
+/* this is the start of login area css styles */
+
 .loginAllContainer{
 
     background: url(../assets/images/loginbackground1.jpeg) no-repeat;
@@ -73,59 +77,6 @@ body{
         grid-template-columns:1fr;
     }
 }
-/* .fahome{
-font-size: 40px;
-margin-left: 20px;
-border-radius: 100%;
-} */
-/* #homeicon{
-    width: 30%;
-}
-#homeicon a{
-    text-decoration: none;
-    color: black;
-}
-#homeicon a i:hover{
-    border: 1px solid white;
-    opacity: 0.1;
-}
-#searchicon{
- width:80%;
- display: flex;
- align-items: center;
- 
-}
-.searchicon{
-    padding-top: 10px;
-    width: 70%;
-    font-size: 25px;
-}
-.searchicon input {
-    padding: 0;
-    width: 80%;
-    height: 40px;
-}
-.searchicon button{
-   width: 40px;
-   height: 40px;
-   font-size: 15px;
-  
-}
-.searchicon input, button{
-    border-radius: 5px;
-}
-.menuplus{
-    display: flex;
-    justify-content: flex-end;
-    width: 20%;
-    font-size: 25px;
-    margin: 10px;
-    
-}
-.menuplus .fa-bars, .fa-plus{
-    margin-right: 10px;
-}
- */
 
 .logincontainer{
     
@@ -159,12 +110,13 @@ border-radius: 100%;
     font-family: sans-serif;
     font-size: 20px;
     font-weight: bold;
+    
 }
 #loginform label, input
 {
     margin-bottom: 25px;
 }
-
+/* this style is for login input fields */
 #loginform input
 {
     height: 30px;
@@ -172,41 +124,67 @@ border-radius: 100%;
     width: 50%;
     color-interpolation-filters: auto;
 }
+
+
 @media all and (max-width:780px){
     #loginform input{
         width: 30%;
     }
+    #loginform #submit{
+        width: 10%;
+        text-align: center;
+    }
 }
 #loginform #submit
 {
-width: 70px;
-height: 30px;
+width: 50%;
+height: 35px;
+/* margin-left: 100px; */
 }
 .login
 {
-    margin-top: 40px;
+    margin-top: 35px;
 
 }
-
-.login button
-{
-    height: 30px;
+/* this style is for create account button */
+.login button {
+    height: 35px;
+    width: 50%;
     border-radius: 5px;
-    
+    color: black;
+    font-size: 14px;
+    margin-bottom: 3px;
+    /* margin-left: 100px; */
 }
 .login button a{
     color: black;
     text-decoration: none;
     font-weight: bold;
 }
+/* this style hovers the create account button */
 .login button:hover{
     background: rgba(81, 10, 50,0.9);;
-    color: #510A32;
-}
-
-.login a{
     color: white;
 }
+/* this style hovers the login button */
+.login a:hover {
+    color: white;
+}
+#forgotp{
+    color: white;
+   
+}
+a#forgotp{
+    margin-top: 20px;
+}
+
+.login #forgotp{
+    position: absolute;
+    padding:40px 0 0 0;
+    color: white;
+}
+
+/* this is the beggining of welcoming page footer */
 
 .loginfooter
 {
@@ -228,116 +206,3 @@ height: 30px;
     padding-top: 50px;
 }
 /* END OF LOGIN PAGE */
-
-/* SIGN UP PAGE */
-.signupnavbar{
-    width: 100%;
-    display: flex;
-    background: rgba(180, 11, 11, 0.87);
-    position: fixed top;
-    color: white;
-}
-.signupcontainer{
-    width: 80%;
-    height: 600px;
-    margin: 30px auto 0;
-    text-align: center;
-    background: rgba(180, 11, 11, 0.87);
-    color: white;
-    box-shadow: 2px 2px 15px 1px rgba(0,0,0,.8);
-    border-radius: 5px;
-}
-
-.signupepicmail{
-    padding-top:5px;
-}
-
-.signupepicmail img 
-{
-    color: white;
-    border-radius: 100%;
-    
-}
-.signupepicmail img:hover{
-    border: 1px solid rgba(216, 19, 19, 0.938);
-    opacity: .5;;
-}
-.signup
-{
-    margin-top: 40px;
-}
-
-.signup button
-{
-    height: 30px;
-    border-radius: 5px;
-    
-}
-.signup button a{
-    color: black;
-    text-decoration: none;
-    font-weight: bold;
-}
-.signup button:hover{
-    background: rgba(216, 19, 19, 0.938);
-    color: red;
-}
-
-.signup a{
-    color: white;
-}
-
-
-
-
-#signupform
-{
-    padding:0;
-    margin:0;
-    font-family: sans-serif;
-    font-size: 20px;
-    font-weight: bold;
-}
-#signupform label, input
-{
-    margin-bottom: 25px;
-}
-
-#signupform input
-{
-    height: 30px;
-    border-radius: 5px;
-    width: 50%;
-    color-interpolation-filters: auto;
-}
-@media all and (max-width:780px){
-    #signupform input{
-        width: 30%;
-    }
-}
-#signupform #submit
-{
-width: 70px;
-height: 30px;
-}
-
-#footer
-{
-    
-    width: 100%;
-    height: 100px;;
-    background: #8F1D2C;
-    opacity: .8;
-    text-align: center;
-    font-family: sans-serif;
-    font-size: 18px;
-    color: white;
-   
-}
-
-#footer p
-{
-    padding-top: 50px;
-}
-
-/* END OF SIGN UP PART */

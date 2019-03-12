@@ -35,17 +35,20 @@
             </div>
             <div class="login">
                 <form action="./HTML/home.html" method="POST" id="loginform">
-                        <label for="username">Username</label>
-                        <input type="text" name="username" id="username" required="true" placeholder="username or email"> <br>
-                        <label for="Password">Password</label>
-                        <input type="password" name="Password" id="loginPassword" required="true" placeholder="Enter password"> <br>
+                        <!-- <label for="username">Username</label> -->
+                        <input type="email" name="username" id="username" required="true" placeholder="Email"> <br>
+                        <!-- <label for="Password">Password</label> -->
+                        <input type="password" name="Password" id="loginPassword" required="true" placeholder="Password"> <br>
                         <button type="submit" name="submit" id="submit" required="true">Login</button>
                 </form>
-                <a href="./HTML/forgotpassword.html">forgot password?</a>
+              
             </div>
             <div class="login">
-                <button type="button"><a href="./HTML/signup.html">Create New Account</a></button>
+                <form action="./HTML/signup.html" method="POST">
+                    <button type="submit" class="crtaccount">Create New Account</Create></button>
+                </form>
             </div>
+            <a href="./HTML/forgotpassword.html" id="forgotp" ><span>forgot password?</span></a>
         </div>
     
     
