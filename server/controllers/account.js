@@ -19,7 +19,10 @@ const account = {
   userSignup(req, res, next) {
     const { error } = signUpValidation.validateSignUp(req.body);
     if (error) {
-      res.status(400).send(error.details[0].message);
+      res.status(400).json({
+        status: 400,
+        error: error.details[0].message,
+      });
       return;
     }
     // the fellowing lines creates the id by adding 1 to whichever index number of requested user's data structure.
@@ -53,7 +56,10 @@ const account = {
     // the line adds validation to login api endpoint using JOI
     const { error } = loginValidation.validateLogin(req.body);
     if (error) {
-      res.status(400).send(error.details[0].message);
+      res.status(400).json({
+        status: 400,
+        error: error.details[0].message,
+      });
       return;
     }
     // this line sets the id to in number and password to be string
