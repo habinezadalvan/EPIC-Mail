@@ -14,7 +14,10 @@ const account = {
 
     const { error } = signUpValidation.validateSignUp(req.body);
     if (error) {
-      res.status(400).send(error.details[0].message);
+      res.status(400).json({
+        status: 400,
+        error: error.details[0].message,
+      });
       return;
     }
     const newId = (signup.length + 1);
@@ -48,7 +51,10 @@ const account = {
     // login JOI validation
     const { error } = loginValidation.validateLogin(req.body);
     if (error) {
-      res.status(400).send(error.details[0].message);
+      res.status(400).json({
+        status: 400,
+        error: error.details[0].message,
+      });
       return;
     }
 
