@@ -11,7 +11,7 @@ const Message = {
       res.status(400).send(error.details[0].message);
       return;
     }
-    const newId = Number(emails.length + 21);
+    const newId = (emails.length + 1);
     const newEmail = {
       id: newId,
       createdOn: new Date(),
@@ -31,14 +31,13 @@ const Message = {
     next();
   },
 
-  getAllMessages(req, res, next) {
-    if (!emails.length) res.status(404).send('not email found');
+  getAllMessages(req, res) {
+    if (!emails.length) res.status(404).send('No email found');
     res.status(200).json({
       status: 200,
       data: emails,
       message: 'list of inbox messages',
     });
-    next();
   },
 
   UnreadMessages(req, res, next) {
@@ -68,7 +67,7 @@ const Message = {
     next();
   },
   getOneEmail(req, res, next) {
-    const singleEmail = emails.find(e => e.id === Number(req.params.id));
+    const singleEmail = emails.find(e => e.id === (req.params.id));
     if (!singleEmail) {
       res.status(404).send('Email not found');
     } else {
@@ -80,7 +79,7 @@ const Message = {
     next();
   },
   deleteOneEmail(req, res, next) {
-    const deleteEmail = emails.find(e => e.id === Number(req.params.id));
+    const deleteEmail = emails.find(e => e.id === (req.params.id));
     if (!deleteEmail) {
       res.status(404).send('That email can not be found to be deleted');
     } else {

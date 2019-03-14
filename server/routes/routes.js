@@ -1,12 +1,11 @@
 import express from 'express';
-// import { createMessages, getAllMessages } from '../controllers/message';
 import message from '../controllers/message';
 // eslint-disable-next-line import/no-named-as-default
 import account from '../controllers/account';
 
 
 const router = express.Router();
-// the following lines are the routes for all endpoints
+// endpoints
 
 router.post('/api/v1/messages', message.createMessages);
 
