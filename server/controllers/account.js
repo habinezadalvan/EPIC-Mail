@@ -1,9 +1,12 @@
-import lodash from 'lodash';
+import bcrypt from 'bcrypt';
+import jwt from 'jsonwebtoken';
+import dotenv from 'dotenv';
 import signup from '../models/signup';
 import login from '../models/login';
 import signUpValidation from '../helpers/signupValidation';
 import loginValidation from '../helpers/loginValidation';
 
+dotenv.config();
 
 const account = {
 
@@ -24,13 +27,22 @@ const account = {
     const newPassword = toString(req.body.password);
     const confPassword = toString(req.body.confirmPassword);
 
-    if (newPassword !== confPassword) {
+    // confirm password validation
+
+    if (req.body.password !== req.body.confirmPassword) {
       res.status(400).json({
-        message: 'Match your the password',
+        message: 'Match your password to confirmPassword',
       });
     }
-
-    const signupAccount = {
+    // email validation
+    let signupAccount = signup.find(email => email.email === req.body.email);
+    if (signupAccount) {
+      res.status(400).json({
+        status: 400,
+        message: 'The email entered has been used',
+      });
+    }
+    signupAccount = {
       id: newId,
       email: req.body.email,
       firstName: req.body.firstName,
@@ -38,10 +50,16 @@ const account = {
       password: newPassword,
       confirmPassword: confPassword,
     };
+    // sign up password authentication
+    signupAccount.password = bcrypt.hash(signupAccount.password, 10);
+
+    const token = jwt.sign({ id: signupAccount.id }, process.env.SECRET_KEY);
+
+
     signup.push(signupAccount);
     res.status(201).json({
       status: 201,
-      data: lodash.pick(signupAccount, ['id', 'email', 'firstName', 'lastName']),
+      data: token,
     });
     next();
   },
@@ -67,10 +85,15 @@ const account = {
       password: newPassword,
     };
 
+    // login password authentication
+    loginAccount.password = bcrypt.hash(loginAccount.password, 10);
+    const token = jwt.sign({ id: loginAccount.id }, process.env.LOGIN_SECRET_KEY);
+
+
     login.push(loginAccount);
-    res.status(201).json({
-      status: 201,
-      data: lodash.pick(loginAccount, ['id', 'email']),
+    res.status(200).json({
+      status: 200,
+      data: token,
     });
     next();
   },

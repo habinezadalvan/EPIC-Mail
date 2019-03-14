@@ -27,11 +27,8 @@
     "babel-polyfill": "^6.26.0",
     "bcrypt": "^3.0.4",
     "body-parser": "^1.18.3",
-
     "coveralls": "^3.0.3",
-
     "dotenv": "^7.0.0",
-
     "express": "^4.16.4",
     "joi": "^13.1.0",
     "jsonwebtoken": "^8.5.0",
