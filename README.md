@@ -2,6 +2,8 @@
 
 [![Coverage Status](https://coveralls.io/repos/github/habinezadalvan/Epic-Mail/badge.svg?branch=ch-tests-work-%23164599870)](https://coveralls.io/github/habinezadalvan/Epic-Mail?branch=ch-tests-work-%23164599870)
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/b79352a37d48aa74aed3/maintainability)](https://codeclimate.com/github/habinezadalvan/Epic-Mail/maintainability)
+
 # Epic-Mail
 **SHORT DESCRIPTION OF EPIC MAIL**
 Epic mail application is a platform developed to help end user to communicate with friends and people from different places across the world in an email form. 
