@@ -1,3 +1,5 @@
+[![Build Status](https://www.travis-ci.org/habinezadalvan/Epic-Mail.svg?branch=develop)](https://www.travis-ci.org/habinezadalvan/Epic-Mail)
+
 # Epic-Mail
 **SHORT DESCRIPTION OF EPIC MAIL**
 Epic mail application is a platform developed to help end user to communicate with friends and people from different places across the world in an email form. 
