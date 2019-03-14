@@ -66,6 +66,35 @@ const Message = {
     }
     next();
   },
+
+  readMessages(req, res, next) {
+    const readEmails = emails.filter(e => e.status === 'read');
+    if (!readEmails.length) {
+      res.status(404).send('No read emails found');
+    } else {
+      res.status(200).json({
+        status: 200,
+        data: readEmails,
+        Notification: 'List of read emails',
+      });
+    }
+    next();
+  },
+
+  draftMessages(req, res, next) {
+    const draftEmails = emails.filter(e => e.status === 'draft');
+    if (!draftEmails.length) {
+      res.status(404).send('No Draft emails found');
+    } else {
+      res.status(200).json({
+        status: 200,
+        data: draftEmails,
+        Notification: 'List of Draft emails',
+      });
+    }
+    next();
+  },
+
   getOneEmail(req, res, next) {
     const singleEmail = emails.find(e => e.id === (req.params.id));
     if (!singleEmail) {
