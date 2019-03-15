@@ -3,10 +3,11 @@
 import chai from 'chai';
 import chaiHttp from 'chai-http';
 import server from '../server';
+import emails from '../models/message';
 
 chai.use(chaiHttp);
 chai.should();
-// const { expect } = chai;
+const { expect } = chai;
 
 describe('post message', () => {
   it('should be able to create a message', (done) => {
@@ -23,15 +24,3 @@ describe('post message', () => {
     done();
   });
 });
-
-// describe('get all messages', () => {
-//   it.only('should be able to get all messages', (done) => {
-//     chai.request(server)
-//       .get('/api/v1/messages')
-//       .end((err, res) => {
-//         res.body.should.have.status(200);
-//         res.body.should.be.an('object');
-//       });
-//     done();
-//   });
-// });

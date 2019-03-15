@@ -5,6 +5,7 @@ import chaiHttp from 'chai-http';
 import server from '../server';
 import signUpValidation from '../helpers/signupValidation';
 import loginValidation from '../helpers/loginValidation';
+import signup from '../models/signup';
 
 
 chai.use(chaiHttp);
@@ -61,6 +62,23 @@ describe('signup', () => {
       })
       .end((err, res) => {
         if (res.body.password !== res.body.confirmPassword) {
+          res.should.have.status(400);
+        }
+      });
+    done();
+  });
+  it('should varify if email has been used ', (done) => {
+    chai.request(server)
+      .post('/api/v1/auth/signup').send({
+        email: 'habine@gmail.com',
+        firstName: 'chris',
+        lastName: 'habineza',
+        password: 'qwerty',
+        confirmPassword: 'qwerty',
+      })
+      .end((err, res) => {
+        const signupAccount = signup.find(email => email.email === res.body.email);
+        if (signupAccount) {
           res.should.have.status(400);
         }
       });
