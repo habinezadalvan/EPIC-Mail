@@ -50,6 +50,22 @@ describe('signup', () => {
         done();
       });
   });
+  it('should valide password to confirm password ', (done) => {
+    chai.request(server)
+      .post('/api/v1/auth/signup').send({
+        email: 'habinegmail.com',
+        firstName: 'chris',
+        lastName: 'habineza',
+        password: 'qwerty',
+        confirmPassword: 'qwerty',
+      })
+      .end((err, res) => {
+        if (res.body.password !== res.body.confirmPassword) {
+          res.should.have.status(400);
+        }
+      });
+    done();
+  });
 });
 
 describe('signup', () => {
@@ -79,7 +95,7 @@ describe('login', () => {
       .end((err, res) => {
         const newpwd = toString('123456t');
         expect(newpwd).to.be.a('string');
-        res.should.have.status(201);
+        res.should.have.status(200);
         res.body.should.be.an('object');
         done();
       });
