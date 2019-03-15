@@ -96,7 +96,7 @@ const Message = {
   },
 
   getOneEmail(req, res, next) {
-    const singleEmail = emails.find(e => e.id === (req.params.id));
+    const singleEmail = emails.find(e => e.id === Number(req.params.id));
     if (!singleEmail) {
       res.status(404).send('Email not found');
     } else {
@@ -108,7 +108,7 @@ const Message = {
     next();
   },
   deleteOneEmail(req, res, next) {
-    const deleteEmail = emails.find(e => e.id === (req.params.id));
+    const deleteEmail = emails.find(e => e.id === Number(req.params.id));
     if (!deleteEmail) {
       res.status(404).send('That email can not be found to be deleted');
     } else {
@@ -121,6 +121,7 @@ const Message = {
     }
     next();
   },
+
 };
 
 export default Message;
