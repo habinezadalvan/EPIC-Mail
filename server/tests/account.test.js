@@ -2,10 +2,13 @@
 /* eslint-disable no-undef */
 import chai from 'chai';
 import chaiHttp from 'chai-http';
+import dotenv from 'dotenv';
 import server from '../server';
 import signUpValidation from '../helpers/signupValidation';
 import loginValidation from '../helpers/loginValidation';
 import signup from '../models/signup';
+
+dotenv.config();
 
 
 chai.use(chaiHttp);
