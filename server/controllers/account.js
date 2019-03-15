@@ -87,7 +87,7 @@ const account = {
 
     // login password authentication
     loginAccount.password = bcrypt.hash(loginAccount.password, 10);
-    const token = jwt.sign({ id: loginAccount.id }, process.env.LOGIN_SECRET_KEY);
+    const token = jwt.sign({ id: loginAccount.id }, process.env.SECRET_KEY);
 
 
     login.push(loginAccount);
