@@ -25,7 +25,6 @@ EPIC-MAIL
 
  Methods | Endpoints | functionality
 --------- | --------- | -------------
-<<<<<<< HEAD
 POST | /api/v1/messages |Creates new messages	
 GET | /api/v1/messages | Fetch all available messages
 GET | /api/v1/messages/unread | Fetch all unread messages
@@ -33,17 +32,7 @@ DELETE | /api/v1/messages/:id | Deletes a specific message with a
 GET | /api/v1/messages/messages/read | gets all messages with "read" status
 GET | /api/v1/messages/draft/messages | gets all messages with "draft" status
 GET | /api/v1/messages/:id | Gets a single message
-=======
-POST| /api/v1/messages |Creates new messages	
-GET | /api/v1/messages | Fetch all available messages
-GET | /api/v1/messages/unread | Fetch all unread messages
-GET | /api/v1/messages/messages/read | gets all messages with "read" status
-GET | /api/v1/messages/draft/messages | gets all messages with "draft" status
-GET | /api/v1/messages/:id | Gets a single message
-DELETE | /api/v1/messages/:id | Deletes a specific message with id
->>>>>>> a4c8424b9f315f8e43e5ea1ed67e4b4ada9d6e41
 ```
-
 ```
 **TOOLS USED**
 
@@ -55,11 +44,7 @@ CSS
 
 **Backend**
 
-<<<<<<< HEAD
 **Language:**
-=======
-**Language:** 
->>>>>>> a4c8424b9f315f8e43e5ea1ed67e4b4ada9d6e41
 
 Javascript
 
@@ -67,7 +52,6 @@ Javascript
 
 Node.js 
 
-<<<<<<< HEAD
 **Back-end framework:**
 
 Express
@@ -76,8 +60,6 @@ Express
 
 Mocha
 
-**Assertion library:**
-=======
 **Back-end framework:** 
 
 Express
@@ -86,21 +68,9 @@ Express
 
 Mocha
 
-**Assertion library:** 
->>>>>>> a4c8424b9f315f8e43e5ea1ed67e4b4ada9d6e41
-
 Chai 
 ```
 ```
-
-<<<<<<< HEAD
-**Front-end deployment:**
-Github Pages link https://habinezadalvan.github.io/Epic-Mail/UI
-**Back-end deployment:** Heroku link https://christian-epicmail.herokuapp.com/
-**Continuous integration:** Travis CI
-**Test coverage:** nyc (A javascript library used to generate coverage reports)
-**Test coverage badge:** Coveralls (It shows test coverage statistics)
-=======
 **Front-end deployment:** 
 
 Github Pages link https://habinezadalvan.github.io/Epic-Mail/UI
@@ -119,8 +89,7 @@ nyc (A javascript library used to generate coverage reports)
 
 **Test coverage badge:**
 
-Coveralls (It shows test coverage statistics)
->>>>>>> a4c8424b9f315f8e43e5ea1ed67e4b4ada9d6e41
+Coveralls 
 
 **Getting Started**
 
@@ -133,7 +102,7 @@ To download it click https://nodejs.org/en/
 
 2. **Clone the project on your machine.**
   
-  git clone https://github.com/habinezadalvan/Epic-Mail.git
+git clone https://github.com/habinezadalvan/Epic-Mail.git
   
 
 3. Do <npm install>
