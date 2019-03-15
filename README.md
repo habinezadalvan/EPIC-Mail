@@ -7,7 +7,6 @@ EPIC-MAIL
 
 **Epic-Mail** is a platform that allows user to communication and interact using emails/messages.
 
-*
 **Epic mail features**
 1. user can create an account
 2. user can login
@@ -24,64 +23,87 @@ EPIC-MAIL
 1. Node
 2. Postman
 
-Endpoints | functionality
------------- | -------------
-POST/api/v1/messages | Creates new messages
-	
-GET	/api/v1/messages | Fetch all available messages
-
-GET/api/v1/messages/messages/unread | Fetch all unread messages
-
-DELETE/api/v1/messages/:id | Deletes a specific message with a
-
-GET/api/v1/messages/messages/read | gets all messages with "read" status
-
-GET/api/v1/messages/draft/messages | gets all messages with "draft" status
-
-GET/api/v1/messages/:id | Gets a single message
+ Methods | Endpoints | functionality
+--------- | --------- | -------------
+POST| /api/v1/messages |Creates new messages	
+GET | /api/v1/messages | Fetch all available messages
+GET | /api/v1/messages/unread | Fetch all unread messages
+GET | /api/v1/messages/messages/read | gets all messages with "read" status
+GET | /api/v1/messages/draft/messages | gets all messages with "draft" status
+GET | /api/v1/messages/:id | Gets a single message
+DELETE | /api/v1/messages/:id | Deletes a specific message with id
 ```
 
 ```
 **TOOLS USED**
 
 **front-end**
--HTML
--CSS
+
+HTML
+
+CSS
 
 **Backend**
 
 **Language:** 
+
 Javascript
+
 **Server environment:** 
+
 Node.js 
+
 **Back-end framework:** 
+
 Express
+
 **Testing library:** 
+
 Mocha
+
 **Assertion library:** 
+
 Chai 
 ```
 ```
 
-**Front-end deployment:** Github Pages link https://habinezadalvan.github.io/Epic-Mail/UI
-**Back-end deployment:** Heroku link https://christian-epicmail.herokuapp.com/
-**Continuous integration:** Travis CI
-**Test coverage:** nyc (A javascript library used to generate coverage reports)
-**Test coverage badge:** Coveralls (It shows test coverage statistics)
+**Front-end deployment:** 
+
+Github Pages link https://habinezadalvan.github.io/Epic-Mail/UI
+
+**Back-end deployment:** 
+
+Heroku link https://christian-epicmail.herokuapp.com/
+
+**Continuous integration:** 
+
+Travis CI
+
+**Test coverage:**
+
+nyc (A javascript library used to generate coverage reports)
+
+**Test coverage badge:**
+
+Coveralls (It shows test coverage statistics)
 
 **Getting Started**
-This quick guide will take you through on how you can run this project on your local machine and TEST the functionality of all endpoints.
+
+This quick guide will take you through on how you can run this project on your local machine 
+and TEST the functionality of all endpoints.
+
 1. Make sure you have Node.js on you machine.
 
 To download it click https://nodejs.org/en/
 
 2. **Clone the project on your machine.**
-
-  To clone, go in your terminal or command line and do < git clone https://github.com/habinezadalvan/Epic-Mail.git>
-
-3. **Do <npm install>.**
   
-  This command will help you get node_modules folder that contains of dev packages that allow you run the project.
+  git clone https://github.com/habinezadalvan/Epic-Mail.git
+  
+
+3. Do <npm install>
+  
+  To get dependencies
   
 4. **Run <npm start> to run the server.**
   
@@ -93,51 +115,69 @@ To download it click https://nodejs.org/en/
   To download it follow the instructions on https://www.getpostman.com/
   
 6. **Get on postman and test all the methods using the provided api endpoints at the beggining of this guide.**
-
+```
   Example:
   Method: POST
   Path: http://localhost:3000/
   Endpoint: api/v1/messages
   
-7. **Depending on the way this project is develop, models are ampty ARRAYs created to receive input from user. This means that to get any data you should first POST something.**
+  ```
+  
+7. **Depending on the way this project is develop, models are ampty ARRAYs created to receive input from user.
+**This means that to get any data you should first POST something.**
 
   So do POST on http://localhost:3000/api/v1/messages so that you can get them whenever you want to GET anything.
   
   -The following are the data struction for POST method
   
   1. **POST a message**
-    ```
-  {
-	"subject":"string",
-	"message":"string"
-  ”parentMessageId”:Integer,
-	"status":"string"  // read, sent, unread/ draft
-}
-```
 ```  
-  2. **POST sign up user**
+  {
   
+  "subject":"string",
+  
+  "message":"string"
+  
+  ”parentMessageId”:Integer,
+  
+  "status":"string"  // read, sent, unread/ draft
+  
+}
+  
+  ```
+  
+  2. **POST sign up user**
+ ``` 
   {
 	"email": "string",
+	
 	"firstName":"string",
+	
 	"lastName":"string",
+	
 	"password":"string",
-  "confirmPassword":"string"
+	
+ 	 "confirmPassword":"string" 
+	 
 }
+```
 
-```
-```
 
 3.**POST login user**
+```
  {
     "email": "string",
+    
     "passWord":"string"
+    
  }
+ 
  ```
-```
 NB: 
  1. **Here is an other option running the project with heroku**
-    User https://christian-epicmail.herokuapp.com/  in instead of http://localhost:3000/ and add the rest of api endpoints as usual.
+ 
+    User https://christian-epicmail.herokuapp.com/ instead of http://localhost:3000/ 
+    and add the rest of api endpoints as usual.
     
  2. **It would be better to view json result in your browser when you have jsonview chrome-extention in you chrom browser**.
     To install it look for JSONview on google.
