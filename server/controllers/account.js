@@ -53,7 +53,7 @@ const account = {
     // sign up password authentication
     signupAccount.password = bcrypt.hash(signupAccount.password, 10);
 
-    const token = jwt.sign({ id: signupAccount.id }, process.env.SECRET_KEY);
+    const token = jwt.sign({ id: signupAccount.id }, 'wikwiheba!');
 
 
     signup.push(signupAccount);
@@ -87,7 +87,7 @@ const account = {
 
     // login password authentication
     loginAccount.password = bcrypt.hash(loginAccount.password, 10);
-    const token = jwt.sign({ id: loginAccount.id }, process.env.SECRET_KEY);
+    const token = jwt.sign({ id: loginAccount.id }, 'wikwiheba!');
 
 
     login.push(loginAccount);
