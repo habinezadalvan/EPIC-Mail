@@ -109,11 +109,11 @@ To download it click https://nodejs.org/en/
 git clone https://github.com/habinezadalvan/Epic-Mail.git
   
 
-3. Do <npm install >
+3. Do ```npm install```
   
   To get dependencies
   
-4. **Run <npm start> to run the server.**
+4. Run ```npm start``` to run the server.
   
     The server is set on localhost =3000 for this particular project
     So the part will be http://localhost:3000/
