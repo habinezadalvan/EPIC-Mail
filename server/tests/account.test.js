@@ -5,6 +5,7 @@ import chaiHttp from 'chai-http';
 import server from '../server';
 import signUpValidation from '../helpers/signupValidation';
 import loginValidation from '../helpers/loginValidation';
+import signup from '../models/signup';
 
 
 chai.use(chaiHttp);
@@ -26,6 +27,7 @@ describe('signup', () => {
       .end((err, res) => {
         res.should.have.status(201);
         res.body.should.be.an('object');
+        res.body.should.have.property('data');
         done();
       });
   });
@@ -49,6 +51,39 @@ describe('signup', () => {
         }
         done();
       });
+  });
+  it('should valide password to confirm password ', (done) => {
+    chai.request(server)
+      .post('/api/v1/auth/signup').send({
+        email: 'habinegmail.com',
+        firstName: 'chris',
+        lastName: 'habineza',
+        password: 'qwerty',
+        confirmPassword: 'qwerty',
+      })
+      .end((err, res) => {
+        if (res.body.password !== res.body.confirmPassword) {
+          res.should.have.status(400);
+        }
+      });
+    done();
+  });
+  it('should varify if email has been used ', (done) => {
+    chai.request(server)
+      .post('/api/v1/auth/signup').send({
+        email: 'habine@gmail.com',
+        firstName: 'chris',
+        lastName: 'habineza',
+        password: 'qwerty',
+        confirmPassword: 'qwerty',
+      })
+      .end((err, res) => {
+        const signupAccount = signup.find(email => email.email === res.body.email);
+        if (signupAccount) {
+          res.should.have.status(400);
+        }
+      });
+    done();
   });
 });
 
@@ -79,8 +114,9 @@ describe('login', () => {
       .end((err, res) => {
         const newpwd = toString('123456t');
         expect(newpwd).to.be.a('string');
-        res.should.have.status(201);
+        res.should.have.status(200);
         res.body.should.be.an('object');
+        res.body.should.have.property('data');
         done();
       });
   });
