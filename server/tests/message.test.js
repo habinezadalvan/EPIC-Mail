@@ -2,8 +2,11 @@
 /* eslint-disable no-undef */
 import chai from 'chai';
 import chaiHttp from 'chai-http';
+import dotenv from 'dotenv';
 import server from '../server';
 import emails from '../models/message';
+
+dotenv.config();
 
 chai.use(chaiHttp);
 chai.should();
