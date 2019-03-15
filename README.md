@@ -104,7 +104,7 @@ and TEST the functionality of all endpoints.
 
 To download it click https://nodejs.org/en/
 
-2. **Clone the project on your machine.**
+2. Clone the project on your machine.
   
 git clone https://github.com/habinezadalvan/Epic-Mail.git
   
@@ -118,11 +118,11 @@ git clone https://github.com/habinezadalvan/Epic-Mail.git
     The server is set on localhost =3000 for this particular project
     So the part will be http://localhost:3000/
   
-5. **Make sure you have postman app on you machine.**
+5. Make sure you have postman app on you machine.
 
   To download it follow the instructions on https://www.getpostman.com/
   
-6. **Get on postman and test all the methods using the provided api endpoints at the beggining of this guide.**
+6. Get on postman and test all the methods using the provided api endpoints at the beggining of this guide.
 ```
   Example:
   Method: POST
@@ -131,8 +131,8 @@ git clone https://github.com/habinezadalvan/Epic-Mail.git
   
   ```
   
-7. **Depending on the way this project is develop, models are ampty ARRAYs created to receive input from user.
-**This means that to get any data you should first POST something.**
+7. Depending on the way this project is develop, models are ampty ARRAYs created to receive input from user.
+This means that to get any data you should first POST something.
 
   So do POST on http://localhost:3000/api/v1/messages so that you can get them whenever you want to GET anything.
   
