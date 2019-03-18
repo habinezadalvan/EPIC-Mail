@@ -2,10 +2,9 @@
 import moment from 'moment';
 import emails from '../models/message';
 import validation from '../helpers/messageValidation';
-
-const Message = {
-
-  createMessages(req, res, next) {
+// change object to class
+class Message {
+  static createMessages(req, res, next) {
     const { error } = validation.validateMessage(req.body);
     if (error) {
       res.status(400).send(error.details[0].message);
@@ -29,18 +28,18 @@ const Message = {
       Notification: 'Email was created successfully',
     });
     next();
-  },
+  }
 
-  getAllMessages(req, res) {
+  static getAllMessages(req, res) {
     if (!emails.length) res.status(404).send('No email found');
     res.status(200).json({
       status: 200,
       data: emails,
       message: 'List of messages',
     });
-  },
+  }
 
-  UnreadMessages(req, res, next) {
+  static UnreadMessages(req, res, next) {
     const unreads = emails.filter(e => e.status === 'unread');
     if (!unreads.length) {
       res.status(404).send('Unread emails not found');
@@ -52,8 +51,9 @@ const Message = {
       });
     }
     next();
-  },
-  sentMessages(req, res, next) {
+  }
+
+  static sentMessages(req, res, next) {
     const sentEmails = emails.filter(e => e.status === 'sent');
     if (!sentEmails.length) {
       res.status(404).send('No sent emails found');
@@ -65,9 +65,9 @@ const Message = {
       });
     }
     next();
-  },
+  }
 
-  readMessages(req, res, next) {
+  static readMessages(req, res, next) {
     const readEmails = emails.filter(e => e.status === 'read');
     if (!readEmails.length) {
       res.status(404).send('No read emails found');
@@ -79,9 +79,9 @@ const Message = {
       });
     }
     next();
-  },
+  }
 
-  draftMessages(req, res, next) {
+  static draftMessages(req, res, next) {
     const draftEmails = emails.filter(e => e.status === 'draft');
     if (!draftEmails.length) {
       res.status(404).send('No Draft emails found');
@@ -93,9 +93,9 @@ const Message = {
       });
     }
     next();
-  },
+  }
 
-  getOneEmail(req, res, next) {
+  static getOneEmail(req, res, next) {
     const singleEmail = emails.find(e => e.id === Number(req.params.id));
     if (!singleEmail) {
       res.status(404).send('Email not found');
@@ -106,8 +106,9 @@ const Message = {
       });
     }
     next();
-  },
-  deleteOneEmail(req, res, next) {
+  }
+
+  static deleteOneEmail(req, res, next) {
     const deleteEmail = emails.find(e => e.id === Number(req.params.id));
     if (!deleteEmail) {
       res.status(404).send('That email can not be found to be deleted');
@@ -120,8 +121,7 @@ const Message = {
       });
     }
     next();
-  },
-
-};
+  }
+}
 
 export default Message;
