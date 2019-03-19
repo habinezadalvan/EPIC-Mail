@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
@@ -8,10 +9,13 @@ import loginValidation from '../helpers/loginValidation';
 
 dotenv.config();
 
+const getToken = (value) => {
+  const tokenJwt = jwt.sign({ id: value }, process.env.SECRETKEY);
+  return tokenJwt;
+};
+
 const account = {
-
   // signup method that will be executed whenever user enters the required input
-
   userSignup(req, res, next) {
     // sign up JOI validation
 
@@ -52,8 +56,7 @@ const account = {
     };
     // sign up password authentication
     signupAccount.password = bcrypt.hash(signupAccount.password, 10);
-
-    const token = jwt.sign({ id: signupAccount.id }, 'wikwiheba!');
+    const token = getToken(signupAccount.id);
 
 
     signup.push(signupAccount);
@@ -87,8 +90,7 @@ const account = {
 
     // login password authentication
     loginAccount.password = bcrypt.hash(loginAccount.password, 10);
-    const token = jwt.sign({ id: loginAccount.id }, 'wikwiheba!');
-
+    const token = getToken(loginAccount.id);
 
     login.push(loginAccount);
     res.status(200).json({
