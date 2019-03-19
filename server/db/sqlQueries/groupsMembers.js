@@ -7,9 +7,11 @@ groupmembers(
 );`;
 
 const saveGroupMembers = `INSERT INTO groupmembers(id, memberId, name, adminId) 
-VALUES($1,$2,$3,$4) ON CONFLICT DO NOTHING returning *)`;
+VALUES($1,$2,$3,$4) ON CONFLICT DO NOTHING returning *`;
 
 const getGroupMembers = 'SELECT * FROM groupmembers';
+
+const getSingleGroupMember = `SELECT * FROM groupmembers WHERE id =${id}`;
 
 const dropGroupMembersTable = 'DROP TABLE IF EXISTS groupmembers';
 
@@ -17,5 +19,6 @@ export default {
   createGroupMembers,
   saveGroupMembers,
   getGroupMembers,
+  getSingleGroupMember,
   dropGroupMembersTable,
 };

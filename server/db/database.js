@@ -54,6 +54,7 @@ const groupMembersTable = async () => {
       console.log(error);
     });
 };
+
 (async () => {
   await createUserTable();
   await createMessageTable();
@@ -70,6 +71,7 @@ const groupMembersTable = async () => {
 
 require('make-runnable');
 
+// exporting query function
 export default {
   query: async (sql, params) => pool.query(sql, params),
 };

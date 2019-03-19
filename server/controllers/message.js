@@ -9,7 +9,7 @@ import database from '../db/database';
 import createMessages from '../db/sqlQueries/messages';
 // change object to class
 class Message {
-  static async createMessages(req, res, next) {
+  static async createMessages(req, res) {
     const { error } = validation.validateMessage(req.body);
     if (error) {
       res.status(400).send(error.details[0].message);
@@ -42,11 +42,10 @@ class Message {
         message: error,
       });
     }
-    next();
   }
 
   static getAllMessages(req, res) {
-    if (!emails.length) res.status(404).send('No email found');
+    if (!rows) res.status(404).send('No email found');
     res.status(200).json({
       status: 200,
       data: emails,

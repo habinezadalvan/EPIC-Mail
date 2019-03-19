@@ -8,15 +8,18 @@ const createUser = `CREATE TABLE IF NOT EXISTS users (
   createdOn TIMESTAMP
     );`;
 const saveUsers = `INSERT INTO user(id, firstName, lastName, email, password, confirmPassword) 
-VALUES($1,$2,$3,$4,$5,$6) ON CONFLICT DO NOTHING returning *)`;
+VALUES($1,$2,$3,$4,$5,$6) ON CONFLICT DO NOTHING returning *`;
 
 const getUsers = 'SELECT * FROM users';
 
 const dropUsersTable = 'DROP TABLE IF EXISTS users';
 
+const getSingleUser = `SELECT * FROM users WHERE id =${id}`;
+
 export default {
   createUser,
   saveUsers,
   getUsers,
+  getSingleUser,
   dropUsersTable,
 };
