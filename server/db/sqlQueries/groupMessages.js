@@ -1,15 +1,22 @@
-const groupMessages = `
-CREATE TABLE IF NOT EXISTS groupMessages(
-    id SERIAL PRIMARY KEY NOT NULL,
-    message TEXT NOT NULL,
-    senderId INT NOT NULL REFERENCES users(id),
-    groupId INT NOT NULL REFERENCES groups (id),
-    createdON TIMESTAMP
-)`;
+const createGroupMessages = `CREATE TABLE IF NOT EXISTS 
+groupMessages(
+  id UUID PRIMARY KEY NOT NULL,
+  senderId  UUID NOT NULL REFERENCES users(id),
+  groupId  UUID NOT NULL REFERENCES groups (id),
+  message TEXT NOT NULL,
+  createdON TIMESTAMP
+);`;
+
+const saveGroupMessages = `INSERT INTO groupMessages(id, senderId, groupId,message,createdOn) 
+    VALUES($1,$2,$3,$4,$5) ON CONFLICT DO NOTHING returning *)`;
+
+const getGroupMessages = 'SELECT * FROM groupMessages';
 
 const dropGroupMessagesTable = 'DROP TABLE IF EXISTS groupMessages';
 
 export default {
-  groupMessages,
+  createGroupMessages,
+  saveGroupMessages,
+  getGroupMessages,
   dropGroupMessagesTable,
 };

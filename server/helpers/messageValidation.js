@@ -3,7 +3,7 @@ import Joi from 'joi';
 // validating message function
 const validation = {
 
-  validateMessage(newEmail) {
+  validateMessage(value) {
     const messageSchema = {
       subject: Joi.string().min(3).required(),
       message: Joi.string().required(),
@@ -13,7 +13,7 @@ const validation = {
       status: Joi.strict().required(),
     };
 
-    return Joi.validate(newEmail, messageSchema);
+    return Joi.validate(value, messageSchema);
   },
 };
 
