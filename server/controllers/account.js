@@ -9,8 +9,8 @@ import loginValidation from '../helpers/loginValidation';
 
 dotenv.config();
 
-const getToken = (x) => {
-  const tokenJwt = jwt.sign({ id: x }, process.env.SECRETKEY);
+const getToken = (value) => {
+  const tokenJwt = jwt.sign({ id: value }, process.env.SECRETKEY);
   return tokenJwt;
 };
 
