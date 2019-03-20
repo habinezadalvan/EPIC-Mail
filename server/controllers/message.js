@@ -1,46 +1,59 @@
+/* eslint-disable no-unreachable */
+/* eslint-disable consistent-return */
 // eslint-disable-next-line no-unused-vars
 import moment from 'moment';
+import uuid from 'uuid';
 import emails from '../models/message';
 import validation from '../helpers/messageValidation';
-
-const Message = {
-
-  createMessages(req, res, next) {
+import database from '../db/database';
+import createMessages from '../db/sqlQueries/messages';
+// change object to class
+class Message {
+  static async createMessages(req, res) {
     const { error } = validation.validateMessage(req.body);
     if (error) {
       res.status(400).send(error.details[0].message);
       return;
     }
-    const newId = (emails.length + 1);
-    const newEmail = {
-      id: newId,
-      createdOn: new Date(),
-      subject: req.body.subject,
-      message: req.body.message,
-      senderId: req.body.senderId,
-      receiverId: req.body.receiverId,
-      parentMessageId: req.body.parentMessageId,
-      status: req.body.status,
-    };
-    emails.push(newEmail);
-    res.status(201).json({
-      status: 201,
-      data: emails,
-      Notification: 'Email was created successfully',
-    });
-    next();
-  },
 
-  getAllMessages(req, res) {
-    if (!emails.length) res.status(404).send('No email found');
+    const sqlEmail = createMessages.saveMessages;
+    const value = [
+      uuid.v4(),
+      uuid.v4(),
+      uuid.v4(),
+      uuid.v4(),
+      req.body.subject,
+      req.body.message,
+      req.body.status,
+      new Date(),
+    ];
+    console.log(value);
+    try {
+      const { rows } = await database.query(sqlEmail, value);
+      console.log(rows[0]);
+      return res.status(201).json({
+        status: 201,
+        data: rows[0],
+      });
+    } catch (err) {
+      console.log(err);
+      return res.status(400).json({
+        status: 400,
+        message: error,
+      });
+    }
+  }
+
+  static getAllMessages(req, res) {
+    if (!rows) res.status(404).send('No email found');
     res.status(200).json({
       status: 200,
       data: emails,
       message: 'List of messages',
     });
-  },
+  }
 
-  UnreadMessages(req, res, next) {
+  static UnreadMessages(req, res, next) {
     const unreads = emails.filter(e => e.status === 'unread');
     if (!unreads.length) {
       res.status(404).send('Unread emails not found');
@@ -52,8 +65,9 @@ const Message = {
       });
     }
     next();
-  },
-  sentMessages(req, res, next) {
+  }
+
+  static sentMessages(req, res, next) {
     const sentEmails = emails.filter(e => e.status === 'sent');
     if (!sentEmails.length) {
       res.status(404).send('No sent emails found');
@@ -65,9 +79,9 @@ const Message = {
       });
     }
     next();
-  },
+  }
 
-  readMessages(req, res, next) {
+  static readMessages(req, res, next) {
     const readEmails = emails.filter(e => e.status === 'read');
     if (!readEmails.length) {
       res.status(404).send('No read emails found');
@@ -79,9 +93,9 @@ const Message = {
       });
     }
     next();
-  },
+  }
 
-  draftMessages(req, res, next) {
+  static draftMessages(req, res, next) {
     const draftEmails = emails.filter(e => e.status === 'draft');
     if (!draftEmails.length) {
       res.status(404).send('No Draft emails found');
@@ -93,9 +107,9 @@ const Message = {
       });
     }
     next();
-  },
+  }
 
-  getOneEmail(req, res, next) {
+  static getOneEmail(req, res, next) {
     const singleEmail = emails.find(e => e.id === Number(req.params.id));
     if (!singleEmail) {
       res.status(404).send('Email not found');
@@ -106,8 +120,9 @@ const Message = {
       });
     }
     next();
-  },
-  deleteOneEmail(req, res, next) {
+  }
+
+  static deleteOneEmail(req, res, next) {
     const deleteEmail = emails.find(e => e.id === Number(req.params.id));
     if (!deleteEmail) {
       res.status(404).send('That email can not be found to be deleted');
@@ -120,8 +135,7 @@ const Message = {
       });
     }
     next();
-  },
-
-};
+  }
+}
 
 export default Message;
