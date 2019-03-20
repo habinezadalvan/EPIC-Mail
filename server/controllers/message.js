@@ -4,7 +4,7 @@
 // eslint-disable-next-line no-unused-vars
 import moment from 'moment';
 import uuid from 'uuid';
-import emails from '../models/message';
+// import emails from '../models/message';
 import validation from '../helpers/messageValidation';
 import database from '../db/database';
 import createMessages from '../db/sqlQueries/messages';

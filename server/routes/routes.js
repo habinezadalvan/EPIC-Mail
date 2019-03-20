@@ -3,6 +3,7 @@ import message from '../controllers/message';
 // eslint-disable-next-line import/no-named-as-default
 import account from '../controllers/account';
 import authorization from '../middleware/authantication';
+import group from '../controllers/groups';
 
 const router = express.Router();
 // endpoints
@@ -18,6 +19,8 @@ router.get('/api/v1/messages/:id', authorization, message.getOneEmail);
 
 router.post('/api/v1/auth/signup', account.userSignup);
 router.post('/api/v1/auth/login', account.userLogin);
+
+router.post('/api/v2/groups', authorization, group.userCreatesGroup);
 
 
 export default router;

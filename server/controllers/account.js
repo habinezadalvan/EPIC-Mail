@@ -60,6 +60,7 @@ class Account {
   static async userLogin(req, res) {
     // validation
     if (!req.body.email || !req.body.password) {
+      console.log(req.body);
       return res.status(400).json({
         status: 400,
         message: 'Missing email or password',   
