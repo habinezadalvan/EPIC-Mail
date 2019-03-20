@@ -1,3 +1,4 @@
+/* eslint-disable no-lone-blocks */
 /* eslint-disable no-unreachable */
 /* eslint-disable consistent-return */
 // eslint-disable-next-line no-unused-vars
@@ -7,9 +8,10 @@ import emails from '../models/message';
 import validation from '../helpers/messageValidation';
 import database from '../db/database';
 import createMessages from '../db/sqlQueries/messages';
+
 // change object to class
 class Message {
-  // Old Validation 
+  // Old Validation
   static async createMessages(req, res) {
     const { error } = validation.validateMessage(req.body);
     if (error) {
@@ -45,82 +47,127 @@ class Message {
     }
   }
 
-  static getAllMessages(req, res) {
-    if (!rows) res.status(404).send('No email found');
-    res.status(200).json({
-      status: 200,
-      data: emails,
-      message: 'List of messages',
-    });
+  static async getAllMessages(req, res) {
+    const queryContent = createMessages.getAllMessages;
+    try {
+      const { rows } = await database.query(queryContent);
+      return res.status(200).json({
+        status: 200,
+        data: rows,
+      });
+    } catch (error) {
+      {
+        return res.status(400).json({
+          error,
+        });
+      }
+    }
   }
 
-  static UnreadMessages(req, res, next) {
-    const unreads = emails.filter(e => e.status === 'unread');
-    if (!unreads.length) {
-      res.status(404).send('Unread emails not found');
-    } else {
-      res.status(200).json({
+  static async UnreadMessages(req, res) {
+    const queryContent = createMessages.getUnreadMessage;
+
+    try {
+      const { rows } = await database.query(queryContent);
+      return res.status(200).json({
         status: 200,
-        data: unreads,
-        Notification: 'List of unread of unread messages',
+        data: rows,
+      });
+    } catch (error) {
+      return res.status(400).json({
+        status: 400,
+        data: error,
       });
     }
-    next();
   }
 
-  static sentMessages(req, res, next) {
-    const sentEmails = emails.filter(e => e.status === 'sent');
-    if (!sentEmails.length) {
-      res.status(404).send('No sent emails found');
-    } else {
-      res.status(200).json({
+  static async sentMessages(req, res) {
+    const queryContent = createMessages.getSentMessages;
+    try {
+      const { rows } = await database.query(queryContent);
+      if (rows.length === 0) {
+        return res.status(404).json({
+          status: 404,
+          message: 'Message not found',
+        });
+      }
+      return res.status(200).json({
         status: 200,
-        data: sentEmails,
-        Notification: 'list of sent emails',
+        data: rows,
+      });
+    } catch (error) {
+      return res.status(400).json({
+        status: 400,
+        data: error,
       });
     }
-    next();
   }
 
-  static readMessages(req, res, next) {
-    const readEmails = emails.filter(e => e.status === 'read');
-    if (!readEmails.length) {
-      res.status(404).send('No read emails found');
-    } else {
-      res.status(200).json({
+  static async readMessages(req, res) {
+    const queryContent = createMessages.getReadMessage;
+    try {
+      const { rows } = await database.query(queryContent);
+      if (rows.length === 0) {
+        return res.status(404).json({
+          status: 404,
+          message: 'No email found',
+        });
+      }
+      return res.status(200).json({
         status: 200,
-        data: readEmails,
-        Notification: 'List of read emails',
+        data: rows,
+      });
+    } catch (error) {
+      return res.status(400).json({
+        status: 400,
+        message: error,
       });
     }
-    next();
   }
 
-  static draftMessages(req, res, next) {
-    const draftEmails = emails.filter(e => e.status === 'draft');
-    if (!draftEmails.length) {
-      res.status(404).send('No Draft emails found');
-    } else {
-      res.status(200).json({
+  static async draftMessages(req, res) {
+    const queryContent = createMessages.getDraftMessages;
+    try {
+      const { rows } = await database.query(queryContent);
+      if (rows.length === 0) {
+        return res.status(404).json({
+          status: 404,
+          message: 'No draft email found',
+        });
+      }
+      return res.status(200).json({
         status: 200,
-        data: draftEmails,
-        Notification: 'List of Draft emails',
+        data: rows,
+      });
+    } catch (error) {
+      return res.status(400).json({
+        status: 400,
+        message: error,
       });
     }
-    next();
   }
 
-  static getOneEmail(req, res, next) {
-    const singleEmail = emails.find(e => e.id === Number(req.params.id));
-    if (!singleEmail) {
-      res.status(404).send('Email not found');
-    } else {
-      res.status(200).json({
+  static async getOneEmail(req, res) {
+    const queryContent = createMessages.getSingleMessage;
+    try {
+      const { rows } = await database.query(queryContent, [req.params.id]);
+      if (rows.length === 0) {
+        return res.status(404).json({
+          status: 404,
+          message: 'The email you are trying to get donot exists',
+        });
+      }
+      return res.status(200).json({
         status: 200,
-        data: singleEmail,
+        data: rows,
+      });
+    } catch (error) {
+      console.log(error);
+      return res.status(400).json({
+        status: 400,
+        message: error,
       });
     }
-    next();
   }
 
   static deleteOneEmail(req, res, next) {
