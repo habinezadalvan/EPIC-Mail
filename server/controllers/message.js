@@ -162,6 +162,7 @@ class Message {
         data: rows,
       });
     } catch (error) {
+      console.log(error);
       return res.status(400).json({
         status: 400,
         message: error,
