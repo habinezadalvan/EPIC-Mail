@@ -9,6 +9,7 @@ import database from '../db/database';
 import createMessages from '../db/sqlQueries/messages';
 // change object to class
 class Message {
+  // Old Validation 
   static async createMessages(req, res) {
     const { error } = validation.validateMessage(req.body);
     if (error) {

@@ -3,7 +3,7 @@ groupmembers(
   id UUID PRIMARY KEY NOT NULL,
   memberId  UUID NOT NULL REFERENCES users(id),
   name VARCHAR (20) NOT NULL,
-  adminId INT REFERENCES users (id)
+  adminId UUID REFERENCES users(id)
 );`;
 
 const saveGroupMembers = `INSERT INTO groupmembers(id, memberId, name, adminId) 
@@ -11,7 +11,7 @@ VALUES($1,$2,$3,$4) ON CONFLICT DO NOTHING returning *`;
 
 const getGroupMembers = 'SELECT * FROM groupmembers';
 
-const getSingleGroupMember = `SELECT * FROM groupmembers WHERE id =${id}`;
+const getSingleGroupMember = 'SELECT * FROM groupmembers WHERE id = $1';
 
 const dropGroupMembersTable = 'DROP TABLE IF EXISTS groupmembers';
 

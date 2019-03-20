@@ -1,6 +1,6 @@
 const createGroups = `CREATE TABLE IF NOT EXISTS 
 groups(
-id SERIAL PRIMARY KEY NOT NULL,
+id UUID PRIMARY KEY NOT NULL,
 name VARCHAR NOT NULL,
 createdOn TIMESTAMP
 );`;
@@ -10,7 +10,7 @@ VALUES($1,$2,$3) ON CONFLICT DO NOTHING returning *`;
 
 const getGroups = 'SELECT * FROM groups';
 
-const getSingleGroup = `SELECT * FROM groups WHERE id = ${id}`;
+const getSingleGroup = 'SELECT * FROM groups WHERE id = $1';
 
 const dropGroupTable = 'DROP TABLE IF EXISTS groups';
 

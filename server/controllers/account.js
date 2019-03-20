@@ -1,105 +1,105 @@
+/* eslint-disable consistent-return */
 /* eslint-disable no-undef */
-import bcrypt from 'bcrypt';
-import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
-import signup from '../models/signup';
-import login from '../models/login';
-import signUpValidation from '../helpers/signupValidation';
-import loginValidation from '../helpers/loginValidation';
+import uuid from 'uuid';
+import moment from 'moment';
+import auth from '../helpers/auth';
+import database from '../db/database';
+import createUser from '../db/sqlQueries/users';
 
 dotenv.config();
 
-const getToken = (value) => {
-  const tokenJwt = jwt.sign({ id: value }, process.env.SECRETKEY);
-  return tokenJwt;
-};
-
-const account = {
+class Account {
   // signup method that will be executed whenever user enters the required input
-  userSignup(req, res, next) {
-    // sign up JOI validation
+  static async userSignup(req, res) {
+    if (!auth.validateEmail(req.body.email)) {
+      return res.status(400).json({
+        message: 'The entered password is not valid',
+      });
+    }
+    // Hashing and compare password
 
-    const { error } = signUpValidation.validateSignUp(req.body);
-    if (error) {
-      res.status(400).json({
+    const encryptPassword = auth.passwordHashFunc(req.body.password);
+    // auth.comparePassword(encryptPassword, req.body.password);
+    
+    console.log(req.body);
+    const signUpContent = createUser.saveUsers;
+    const values = [
+      uuid.v4(),
+      req.body.firstName,
+      req.body.lastName,
+      req.body.email,
+      encryptPassword,
+    ];
+    console.log(values);
+
+    try {
+      const { rows } = await database.query(signUpContent, values);
+      if (rows.length === 0) {
+        return res.status(400).json({
+          status: 400,
+          message: 'email already exists in our system',
+        });
+      }
+      const token = auth.getToken(rows[0].id);
+
+      return res.status(201).json({
+        status: 201,
+        data: token,
+      });
+    } catch (err) {
+      console.log(err);
+      return res.status(400).json({
         status: 400,
-        error: error.details[0].message,
-      });
-      return;
-    }
-    const newId = (signup.length + 1);
-    const newPassword = toString(req.body.password);
-    const confPassword = toString(req.body.confirmPassword);
-
-    // confirm password validation
-
-    if (req.body.password !== req.body.confirmPassword) {
-      res.status(400).json({
-        message: 'Match your password to confirmPassword',
+        message: err,
       });
     }
-    // email validation
-    let signupAccount = signup.find(email => email.email === req.body.email);
-    if (signupAccount) {
-      res.status(400).json({
-        status: 400,
-        message: 'The email entered has been used',
-      });
-    }
-    signupAccount = {
-      id: newId,
-      email: req.body.email,
-      firstName: req.body.firstName,
-      lastName: req.body.lastName,
-      password: newPassword,
-      confirmPassword: confPassword,
-    };
-    // sign up password authentication
-    signupAccount.password = bcrypt.hash(signupAccount.password, 10);
-    const token = getToken(signupAccount.id);
-
-
-    signup.push(signupAccount);
-    res.status(201).json({
-      status: 201,
-      data: token,
-    });
-    next();
-  },
+  }
   // login method that will be executed whenever user enters the required input
 
-  userLogin(req, res, next) {
-    // login JOI validation
-    const { error } = loginValidation.validateLogin(req.body);
-    if (error) {
-      res.status(400).json({
+  static async userLogin(req, res) {
+    // validation
+    if (!req.body.email || !req.body.password) {
+      return res.status(400).json({
         status: 400,
-        error: error.details[0].message,
+        message: 'Missing email or password',   
       });
-      return;
     }
+    if (!auth.validateEmail(req.body.email)) {
+      return res.status(400).json({
+        status: 400,
+        message: 'Invalid email',
+      });
+    }
+    const loginContent = createUser.GetUser;
 
-    const newId = (login.length + 1);
-    const newPassword = toString(req.body.password);
+    try {
+      const { rows } = await database.query(loginContent, [req.body.email]);
+      if (rows.length === 0) {
+        return res.status(400).json({
+          status: 400,
+          message: 'email does not exists in our system',
+        });
+      }
+      if (!auth.comparePassword(rows[0].password, req.body.password)) {
+        return res.status(400).json({
+          status: 400,
+          message: 'Incorrect password',
+        });
+      }
+      const token = auth.getToken(rows[0].id);
+      return res.status(200).json({
+        data: [{
+          status: 200,
+          token,
+        }],
+      });
+    } catch (error) {
+      console.error(error);
+      return res.status(400).json(error);
+    }
+  }
+}
 
-    const loginAccount = {
-      id: newId,
-      email: req.body.email,
-      password: newPassword,
-    };
 
-    // login password authentication
-    loginAccount.password = bcrypt.hash(loginAccount.password, 10);
-    const token = getToken(loginAccount.id);
-
-    login.push(loginAccount);
-    res.status(200).json({
-      status: 200,
-      data: token,
-    });
-    next();
-  },
-};
-
-
-export default account;
+export default Account;
