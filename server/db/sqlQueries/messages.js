@@ -18,7 +18,8 @@ const getAllMessages = 'SELECT * FROM messages';
 const getUnreadMessage = "SELECT * FROM messages WHERE status = 'unread'";
 const getSentMessages = "SELECT * FROM messages WHERE status = 'sent'";
 const getReadMessage = "SELECT * FROM messages WHERE status = 'read'";
-const getSingleMessage = 'SELECT * FROM messages WHERE id =$1';
+const getDraftMessages = "SELECT * FROM messages WHERE status = 'draft'";
+const getSingleMessage = 'SELECT * FROM messages WHERE id = $1';
 const dropMessagesTable = 'DROP TABLE IF EXISTS messages';
 
 export default {
@@ -28,6 +29,7 @@ export default {
   getUnreadMessage,
   getSentMessages,
   getReadMessage,
+  getDraftMessages,
   getSingleMessage,
   dropMessagesTable,
 };

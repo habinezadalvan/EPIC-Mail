@@ -84,7 +84,7 @@ class Account {
       if (!auth.comparePassword(rows[0].password, req.body.password)) {
         return res.status(400).json({
           status: 400,
-          message: 'Incorrect password',
+          message: 'Incorrect email or password',
         });
       }
       const token = auth.getToken(rows[0].id);

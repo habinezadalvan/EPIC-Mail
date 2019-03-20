@@ -125,31 +125,48 @@ class Message {
     }
   }
 
-  static draftMessages(req, res, next) {
-    const draftEmails = emails.filter(e => e.status === 'draft');
-    if (!draftEmails.length) {
-      res.status(404).send('No Draft emails found');
-    } else {
-      res.status(200).json({
+  static async draftMessages(req, res) {
+    const queryContent = createMessages.getDraftMessages;
+    try {
+      const { rows } = await database.query(queryContent);
+      if (rows.length === 0) {
+        return res.status(404).json({
+          status: 404,
+          message: 'No draft email found',
+        });
+      }
+      return res.status(200).json({
         status: 200,
-        data: draftEmails,
-        Notification: 'List of Draft emails',
+        data: rows,
+      });
+    } catch (error) {
+      return res.status(400).json({
+        status: 400,
+        message: error,
       });
     }
-    next();
   }
 
-  static getOneEmail(req, res, next) {
-    const singleEmail = emails.find(e => e.id === Number(req.params.id));
-    if (!singleEmail) {
-      res.status(404).send('Email not found');
-    } else {
-      res.status(200).json({
+  static async getOneEmail(req, res) {
+    const queryContent = createMessages.getSingleMessage;
+    try {
+      const { rows } = await database.query(queryContent, [req.params.id]);
+      if (rows.length === 0) {
+        return res.status(404).json({
+          status: 404,
+          message: 'The email you are trying to get donot exists',
+        });
+      }
+      return res.status(200).json({
         status: 200,
-        data: singleEmail,
+        data: rows,
+      });
+    } catch (error) {
+      return res.status(400).json({
+        status: 400,
+        message: error,
       });
     }
-    next();
   }
 
   static deleteOneEmail(req, res, next) {
