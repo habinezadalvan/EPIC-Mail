@@ -3,8 +3,10 @@ import createGroups from '../db/sqlQueries/groups';
 
 
 class Groups {
+  // CREATES GROUP
+
   static async userCreatesGroup(req, res) {
-    const queryContent = createGroups.saveGroups;
+    const queryContent = createGroups.saveGroups; // CALLS INSERT GROUP INTO GROUP TABLE
     const values = [
       req.body.name,
       req.body.role,
@@ -24,8 +26,9 @@ class Groups {
     }
   }
 
+  // GET ALL GROUPS
   static async getAllGroups(req, res) {
-    const queryContent = createGroups.getGroups;
+    const queryContent = createGroups.getGroups; // SELECTS GROUPS FOR A PARTICULAR OWNER
     try {
       const { rows } = await database.query(queryContent, [req.user.id]);
       if (rows.length === 0) {

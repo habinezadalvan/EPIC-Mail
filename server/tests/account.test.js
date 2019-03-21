@@ -20,7 +20,7 @@ const { expect } = chai;
 describe('signup', () => {
   it('should be able to signup', (done) => {
     chai.request(server)
-      .post('/api/v1/auth/signup').send({
+      .post('/api/v2/auth/signup').send({
         email: 'habine@gmail.com',
         firstName: 'chris',
         lastName: 'habineza',
@@ -40,7 +40,7 @@ describe('signup', () => {
 describe('signup', () => {
   it('should be able to validate and return a 400 error status on wrong signup input', (done) => {
     chai.request(server)
-      .post('/api/v1/auth/signup').send({
+      .post('/api/v2/auth/signup').send({
         email: 'habinegmail.com',
         firstName: 'chris',
         lastName: 'habineza',
@@ -57,7 +57,7 @@ describe('signup', () => {
   });
   it('should valide password to confirm password ', (done) => {
     chai.request(server)
-      .post('/api/v1/auth/signup').send({
+      .post('/api/v2/auth/signup').send({
         email: 'habinegmail.com',
         firstName: 'chris',
         lastName: 'habineza',
@@ -73,7 +73,7 @@ describe('signup', () => {
   });
   it('should varify if email has been used ', (done) => {
     chai.request(server)
-      .post('/api/v1/auth/signup').send({
+      .post('/api/v2/auth/signup').send({
         email: 'habine@gmail.com',
         firstName: 'chris',
         lastName: 'habineza',
@@ -93,7 +93,7 @@ describe('signup', () => {
 describe('signup', () => {
   it('should be able to validate that newpassword is eqaul to confirmpasswad and give 400 status', (done) => {
     chai.request(server)
-      .post('/api/v1/auth/signup').send({
+      .post('/api/v2/auth/signup').send({
         newpwd: 'qwerty',
         confPassword: 'ytrewq',
       })
@@ -110,7 +110,7 @@ describe('signup', () => {
 describe('login', () => {
   it('should be able to login', (done) => {
     chai.request(server)
-      .post('/api/v1/auth/login').send({
+      .post('/api/v2/auth/login').send({
         email: 'habineza@gmail.com',
         password: 'qwerty',
       })
@@ -128,7 +128,7 @@ describe('login', () => {
 describe('login', () => {
   it('should be able to validate and return a 400 error status on wrong login input', (done) => {
     chai.request(server)
-      .post('/api/v1/auth/login').send({
+      .post('/api/v2/auth/login').send({
         email: '',
         password: 'qwerty',
       })

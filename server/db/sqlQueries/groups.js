@@ -14,7 +14,6 @@ VALUES($1,$2,$3,$4) ON CONFLICT DO NOTHING returning *`;
 const getGroups = 'SELECT * FROM groups WHERE owner = $1';
 const getGroupId = 'SELECT * FROM groups WHERE id = $1 AND owner = $2';
 const getSingleGroup = 'SELECT * FROM groups WHERE id = $1';
-
 const dropGroupTable = 'DROP TABLE IF EXISTS groups';
 
 export default {

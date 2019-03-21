@@ -4,18 +4,27 @@ import dotenv from 'dotenv';
 import uuid from 'uuid';
 import moment from 'moment';
 import auth from '../helpers/auth';
+import validation from '../helpers/signupValidation';
 import database from '../db/database';
 import createUser from '../db/sqlQueries/users';
 
 dotenv.config();
 
 class Account {
-  // signup method that will be executed whenever user enters the required input
+  // SIGN UP FUNCTION
   static async userSignup(req, res) {
+    // password validation
+
     if (!auth.validateEmail(req.body.email)) {
       return res.status(400).json({
-        message: 'The entered password is not valid',
+        message: 'The input should be an email',
       });
+    }
+    // JOI VALIDATION
+    const { error } = validation.validateSignUp(req.body);
+    if (error) {
+      res.status(400).send(error.details[0].message);
+      return;
     }
     // Hashing and compare password
 
