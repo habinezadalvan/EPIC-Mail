@@ -19,8 +19,10 @@ router.get('/api/v1/messages/:id', authorization, message.getOneEmail);
 
 router.post('/api/v1/auth/signup', account.userSignup);
 router.post('/api/v1/auth/login', account.userLogin);
+router.get('/api/v2/users', account.getAllUsers);
 
 router.post('/api/v2/groups', authorization, group.userCreatesGroup);
+router.get('/api/v2/groups', authorization, group.getAllGroups);
 
 
 export default router;

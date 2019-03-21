@@ -10,7 +10,7 @@ createdOn TIMESTAMP
 const saveGroups = `INSERT INTO groups(name,role,owner,createdOn) 
 VALUES($1,$2,$3,$4) ON CONFLICT DO NOTHING returning *`;
 
-const getGroups = 'SELECT * FROM groups';
+const getGroups = 'SELECT * FROM groups WHERE owner = $1';
 
 const getSingleGroup = 'SELECT * FROM groups WHERE id = $1';
 
