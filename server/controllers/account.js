@@ -100,6 +100,25 @@ class Account {
       return res.status(400).json(error);
     }
   }
+
+  static async getAllUsers(req, res) {
+    const queryContent = createUser.getUsers;
+    try {
+      const { rows } = await database.query(queryContent);
+      if (rows.length === 0) {
+        return res.status(404).json({
+          status: 404,
+          message: 'no group',
+        });
+      }
+      res.status(200).json({
+        status: 200,
+        data: rows,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  }
 }
 
 
