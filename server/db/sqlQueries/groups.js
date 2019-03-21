@@ -1,12 +1,13 @@
 const createGroups = `CREATE TABLE IF NOT EXISTS 
 groups(
-id UUID PRIMARY KEY NOT NULL,
-name VARCHAR NOT NULL,
-role VARCHAR NOT NULL,
+id SERIAL PRIMARY KEY,
+name VARCHAR(50) NOT NULL,
+role VARCHAR(100) NOT NULL,
+owner INTEGER REFERENCES users(id) ON DELETE CASCADE,
 createdOn TIMESTAMP
 );`;
 
-const saveGroups = `INSERT INTO groups(id, name,role, createdOn) 
+const saveGroups = `INSERT INTO groups(name,role,owner,createdOn) 
 VALUES($1,$2,$3,$4) ON CONFLICT DO NOTHING returning *`;
 
 const getGroups = 'SELECT * FROM groups';

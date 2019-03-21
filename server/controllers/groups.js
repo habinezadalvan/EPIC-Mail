@@ -7,9 +7,9 @@ class Groups {
   static async userCreatesGroup(req, res) {
     const queryContent = createGroups.saveGroups;
     const values = [
-      uuid.v4(),
       req.body.name,
       req.body.role,
+      req.user.id,
       new Date(),
     ];
     try {

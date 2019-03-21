@@ -1,14 +1,14 @@
 const createGroupMessages = `CREATE TABLE IF NOT EXISTS 
 groupMessages(
-  id UUID PRIMARY KEY NOT NULL,
-  senderId  UUID NOT NULL REFERENCES users(id),
-  groupId  UUID NOT NULL REFERENCES groups(id),
+  id SERIAL  PRIMARY KEY NOT NULL,
+  senderId  INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  groupId  INTEGER NOT NULL REFERENCES groups(id) ON DELETE CASCADE,
   message TEXT NOT NULL,
   createdON TIMESTAMP
 );`;
 
-const saveGroupMessages = `INSERT INTO groupMessages(id, senderId, groupId,message,createdOn) 
-    VALUES($1,$2,$3,$4,$5) ON CONFLICT DO NOTHING returning *`;
+const saveGroupMessages = `INSERT INTO groupMessages(senderId, groupId,message,createdOn) 
+    VALUES($1,$2,$3,$4) ON CONFLICT DO NOTHING returning *`;
 
 const getGroupMessages = 'SELECT * FROM groupMessages';
 

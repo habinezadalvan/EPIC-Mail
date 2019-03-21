@@ -21,15 +21,15 @@ class Account {
 
     const encryptPassword = auth.passwordHashFunc(req.body.password);
     // auth.comparePassword(encryptPassword, req.body.password);
-    
+
     console.log(req.body);
     const signUpContent = createUser.saveUsers;
     const values = [
-      uuid.v4(),
       req.body.firstName,
       req.body.lastName,
       req.body.email,
       encryptPassword,
+      new Date(),
     ];
     console.log(values);
 
@@ -63,7 +63,7 @@ class Account {
       console.log(req.body);
       return res.status(400).json({
         status: 400,
-        message: 'Missing email or password',   
+        message: 'Missing email or password',
       });
     }
     if (!auth.validateEmail(req.body.email)) {
