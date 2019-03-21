@@ -1,17 +1,17 @@
 const createMessage = `CREATE TABLE IF NOT EXISTS 
 messages(
-  id UUID PRIMARY KEY NOT NULL,
-  senderId  UUID NOT NULL,
-  receiverId UUID,
-  parentMessageId  UUID,
+  id SERIAL PRIMARY KEY NOT NULL,
+  senderId INTEGER REFERENCES users(id) ON DELETE CASCADE,
+  receiverId INTEGER REFERENCES users(id) ON DELETE CASCADE,
+  parentMessageId  INTEGER,
   subject TEXT NOT NULL,
   message TEXT NOT NULL,
   status VARCHAR (10) NOT NULL,
   createdOn TIMESTAMP
     );`;
 
-const saveMessages = `INSERT INTO messages(id, senderId, receiverId,parentMessageId, subject, message,status,createdOn) 
-    VALUES($1,$2,$3,$4,$5,$6,$7,$8) ON CONFLICT DO NOTHING returning *`;
+const saveMessages = `INSERT INTO messages(senderId, receiverId,parentMessageId, subject, message,status,createdOn) 
+    VALUES($1,$2,$3,$4,$5,$6,$7) ON CONFLICT DO NOTHING returning *`;
 
 
 const getAllMessages = 'SELECT * FROM messages';
@@ -20,6 +20,7 @@ const getSentMessages = "SELECT * FROM messages WHERE status = 'sent'";
 const getReadMessage = "SELECT * FROM messages WHERE status = 'read'";
 const getDraftMessages = "SELECT * FROM messages WHERE status = 'draft'";
 const getSingleMessage = 'SELECT * FROM messages WHERE id = $1';
+const deleteSingleMessage = 'DELETE FROM messages WHERE id = $1';
 const dropMessagesTable = 'DROP TABLE IF EXISTS messages';
 
 export default {
@@ -31,5 +32,6 @@ export default {
   getReadMessage,
   getDraftMessages,
   getSingleMessage,
+  deleteSingleMessage,
   dropMessagesTable,
 };

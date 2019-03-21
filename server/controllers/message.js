@@ -4,7 +4,7 @@
 // eslint-disable-next-line no-unused-vars
 import moment from 'moment';
 import uuid from 'uuid';
-import emails from '../models/message';
+// import emails from '../models/message';
 import validation from '../helpers/messageValidation';
 import database from '../db/database';
 import createMessages from '../db/sqlQueries/messages';
@@ -21,10 +21,9 @@ class Message {
 
     const sqlEmail = createMessages.saveMessages;
     const value = [
-      uuid.v4(),
-      uuid.v4(),
-      uuid.v4(),
-      uuid.v4(),
+      req.user.id,
+      req.body.receiverId,
+      req.body.parentMessageId,
       req.body.subject,
       req.body.message,
       req.body.status,
@@ -165,24 +164,28 @@ class Message {
       console.log(error);
       return res.status(400).json({
         status: 400,
-        message: error,
       });
     }
   }
 
-  static deleteOneEmail(req, res, next) {
-    const deleteEmail = emails.find(e => e.id === Number(req.params.id));
-    if (!deleteEmail) {
-      res.status(404).send('That email can not be found to be deleted');
-    } else {
-      const index = emails.indexOf(deleteEmail);
-      emails.splice(index, 1);
-      res.status(200).json({
+  static async deleteOneEmail(req, res) {
+    const queryContent = createMessages.deleteSingleMessage;
+    try {
+      const rows = await database.query(queryContent, [req.params.id]);
+      console.log(rows.rowCount);
+      if (rows.rowCount === 0) {
+        return res.status(404).json({
+          status: 404,
+          message: 'The email you are trying to delete does not exist',
+        });
+      }
+      return res.status(200).json({
         status: 200,
-        data: { message: ' Email deleted successfully' },
+        Notification: 'The email has been deleted',
       });
+    } catch (error) {
+      console.log(error);
     }
-    next();
   }
 }
 

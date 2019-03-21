@@ -1,12 +1,12 @@
 const createUser = `CREATE TABLE IF NOT EXISTS users (
-  id UUID PRIMARY KEY NOT NULL,
-  firstName VARCHAR (20) NOT NULL,
-  lastName VARCHAR (20) NOT NULL,
-  email VARCHAR (50) NOT NULL UNIQUE,
-  password VARCHAR (100) NOT NULL,
-  createdOn TIMESTAMP DEFAULT NOW()
+  id SERIAL PRIMARY KEY,
+  firstname VARCHAR (20) NOT NULL,
+  lastname VARCHAR (20) NOT NULL,
+  email VARCHAR (100) UNIQUE NOT NULL,
+  password VARCHAR (100),
+  createdOn TIMESTAMP
     );`;
-const saveUsers = `INSERT INTO users(id, firstName, lastName, email, password) 
+const saveUsers = `INSERT INTO users(firstName, lastName, email, password, createdOn) 
 VALUES($1,$2,$3,$4,$5) ON CONFLICT DO NOTHING returning *`;
 
 const getUsers = 'SELECT * FROM users';
