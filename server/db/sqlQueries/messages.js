@@ -14,7 +14,7 @@ const saveMessages = `INSERT INTO messages(senderId, receiverId,parentMessageId,
     VALUES($1,$2,$3,$4,$5,$6,$7) ON CONFLICT DO NOTHING returning *`;
 
 
-const getAllMessages = 'SELECT * FROM messages';
+const getAllMessages = `SELECT * FROM messages WHERE receiverId = $1 AND (status ='unread' OR status ='read')`;
 const getUnreadMessage = "SELECT * FROM messages WHERE status = 'unread'";
 const getSentMessages = "SELECT * FROM messages WHERE status = 'sent'";
 const getReadMessage = "SELECT * FROM messages WHERE status = 'read'";
