@@ -2,8 +2,6 @@
 /* eslint-disable no-unreachable */
 /* eslint-disable consistent-return */
 // eslint-disable-next-line no-unused-vars
-import moment from 'moment';
-import uuid from 'uuid';
 // import emails from '../models/message';
 import validation from '../helpers/messageValidation';
 import database from '../db/database';
@@ -49,13 +47,14 @@ class Message {
   static async getAllMessages(req, res) {
     const queryContent = createMessages.getAllMessages;
     try {
-      const { rows } = await database.query(queryContent);
+      const { rows } = await database.query(queryContent, [req.user.id]);
       return res.status(200).json({
         status: 200,
         data: rows,
       });
     } catch (error) {
       {
+        console.log(error);
         return res.status(400).json({
           error,
         });

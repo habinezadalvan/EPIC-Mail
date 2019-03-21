@@ -19,6 +19,7 @@ const authorization = (req, res, next) => {
       });
     } else {
       req.user = decode;
+      console.log(decode.id);
       next();
     }
   });
