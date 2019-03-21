@@ -4,6 +4,7 @@ import message from '../controllers/message';
 import account from '../controllers/account';
 import authorization from '../middleware/authantication';
 import group from '../controllers/groups';
+import members from '../controllers/groupMembers';
 
 const router = express.Router();
 // endpoints
@@ -23,6 +24,7 @@ router.get('/api/v2/users', account.getAllUsers);
 
 router.post('/api/v2/groups', authorization, group.userCreatesGroup);
 router.get('/api/v2/groups', authorization, group.getAllGroups);
+router.post('/api/v2/groups/:groupId/users', authorization, members.addMember);
 
 
 export default router;
