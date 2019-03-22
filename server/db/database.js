@@ -9,47 +9,47 @@ import grpMembers from './sqlQueries/groupsMembers';
 
 
 const createUserTable = async () => {
-  const queryContent = users.createUser;
+  const queryContent = users.createUser; // CALL CREATEUSER QUERY FROM USERS QUERY
   await pool.query(queryContent)
     .then((res) => {
-      console.log(res);
+      console.log('USERS TABLE created successfully');
     }).catch((error) => {
       console.log(error);
     });
 };
 const createMessageTable = async () => {
-  const queryContent = messages.createMessage;
+  const queryContent = messages.createMessage; // CALL CREATE MESSAGE QUERY FROM MESSAGES QUERY
   await pool.query(queryContent)
     .then((res) => {
-      console.log(res);
+      console.log('MESSAGES TABLE created successfully');
     }).catch((error) => {
       console.log(error);
     });
 };
 const createGroupTable = async () => {
-  const queryContent = groups.createGroups;
+  const queryContent = groups.createGroups; // CALL CREATE GROUP TABLE FROM GROUPS QUERY TABLE
   await pool.query(queryContent)
     .then((res) => {
-      console.log(res);
+      console.log('GROUPS TABLE created successfully');
     }).catch((error) => {
       console.log(error);
     });
 };
 const createGroupMessagesTable = async () => {
-  const queryContent = grpMessages.createGroupMessages;
+  const queryContent = grpMessages.createGroupMessages; // CALL CREATE GROUP MESSAGE TABLE QUERY FROM GROUP MESSAGES QUERY
   await pool.query(queryContent)
     .then((res) => {
-      console.log(res);
+      console.log('GROUP MESSAGES TABLE created successfully');
     }).catch((error) => {
       console.log(error);
     });
 };
 
 const groupMembersTable = async () => {
-  const queryContent = grpMembers.createGroupMembers;
+  const queryContent = grpMembers.createGroupMembers; // CALL CREATE GROUP MEMBERS TABLE QUERY FROM GROUP MEMBERS QUERY
   await pool.query(queryContent)
     .then((res) => {
-      console.log(res);
+      console.log('GROUP MEMBERS TABLE created successfully');
     }).catch((error) => {
       console.log(error);
     });
@@ -62,16 +62,15 @@ const groupMembersTable = async () => {
   await createGroupMessagesTable();
   await groupMembersTable();
 
-  //pool.end();
+  // pool.end();
 
   console.log('Tables have been created successfully');
 })().catch((error) => {
   console.log(error);
 });
 
-require('make-runnable');
 
 // exporting query function
 export default {
-  query: async (sql, params) => pool.query(sql, params),
+  query: async (sql, params) => pool.query(sql, params), 
 };
