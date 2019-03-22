@@ -1,8 +1,6 @@
 /* eslint-disable consistent-return */
 /* eslint-disable no-undef */
 import dotenv from 'dotenv';
-import uuid from 'uuid';
-import moment from 'moment';
 import auth from '../helpers/auth';
 import validation from '../helpers/signupValidation';
 import database from '../db/database';
@@ -32,7 +30,7 @@ class Account {
     // auth.comparePassword(encryptPassword, req.body.password);
 
     console.log(req.body);
-    const signUpContent = createUser.saveUsers;
+    const signUpContent = createUser.saveUsers; // CALL SAVE USERS QUERY FROM USERS TABLE QUESRY
     const values = [
       req.body.firstName,
       req.body.lastName,
@@ -50,7 +48,7 @@ class Account {
           message: 'email already exists in our system',
         });
       }
-      const token = auth.getToken(rows[0].id);
+      const token = auth.getToken(rows[0].id); // SIGN UP TOKEN
 
       return res.status(201).json({
         status: 201,
