@@ -17,7 +17,7 @@ class Message {
       return;
     }
 
-    const sqlEmail = createMessages.saveMessages;
+    const sqlEmail = createMessages.saveMessages; //INSERT MESSAGES IN MESSAGE TABLE
     const value = [
       req.user.id,
       req.body.receiverId,
